@@ -1,0 +1,25 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Markup1
+# Changes to be committed:
+#	modified:   Turtle-Tunnel.Editor.Plugins.csproj
+#	modified:   Turtle-Tunnel.Plugins.csproj
+#	modified:   Turtle-Tunnel.sln
+#
+# Untracked files:
+#	Temp/UnityLockfile
+#	Temp/UnityTempFile-091c3fbb9e8a5fb4f9fabec97ff98ab8
+#	Temp/UnityTempFile-4befd7a5116a2204db9a27db0fd3557a
+#	Temp/UnityTempFile-585a9fc366bda604a9e1e5dcede788ec
+#	Temp/UnityTempFile-5b6b0dec3923b6a4588ea20484f2afe9
+#	Temp/UnityTempFile-5f70bc7d077c081438fb4f6f99b516ed
+#	Temp/UnityTempFile-834698bced631514696a57c0b2b57631
+#	Temp/UnityTempFile-8ef66cad821404b458af10567650fb41
+#	Temp/UnityTempFile-bd2c99b9d28dfa24787bd67d3905fcb6
+#	Temp/UnityTempFile-c35b7506b7ed3e049802014f921946d6
+#	Temp/UnityVS_obj/
+#	Temp/__Backupscenes/
+#	Turtle-Tunnel.csproj
+#
+
