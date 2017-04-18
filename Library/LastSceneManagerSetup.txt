@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< Updated upstream
-- path: Assets/Game.unity
-=======
-- path: Assets/Start Menu.unity
->>>>>>> Stashed changes
+- path: Assets/Scenes/rotatedPathsLevel.unity
   isLoaded: 1
   isActive: 1
