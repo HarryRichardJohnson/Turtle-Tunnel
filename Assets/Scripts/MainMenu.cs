@@ -7,19 +7,30 @@ public class MainMenu : MonoBehaviour {
 
 	public Text scoreLabel;
 
+    public Text coinLabel;
+
+    private int score;
+
 	private void Awake () {
 		Application.targetFrameRate = 1000;
 	}
 
-	public void StartGame (int mode) {
-		player.StartGame(mode);
+    public void StartGame (int mode) {
+        score = 0;
+        player.StartGame(mode);
 		gameObject.SetActive(false);
 		Cursor.visible = false;
 	}
 
-	public void EndGame (float distanceTraveled) {
-		scoreLabel.text = ((int)(distanceTraveled * 10f)).ToString();
-		gameObject.SetActive(true);
+    public void UpdateCoinScore(int value)
+    {
+        score += value;
+    }
+
+    public void EndGame (float distanceTraveled) {
+		scoreLabel.text = "Total score: " + ((int)(distanceTraveled * 10f)).ToString();
+        coinLabel.text = "Coins: " + score.ToString();
+        gameObject.SetActive(true);
 		Cursor.visible = true;
 	}
 }
