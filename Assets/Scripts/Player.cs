@@ -69,7 +69,7 @@ public class Player : MonoBehaviour {
 		UpdateAvatarRotation();
 
         //add gravity
-        rotater.localRotation = Quaternion.Euler(0f, -8.0f, 0f);
+        //rotater.localRotation = Quaternion.Euler(0f, -8.0f, 0f);
 
         hud.SetValues(distanceTraveled, velocity);
 	}
@@ -77,12 +77,8 @@ public class Player : MonoBehaviour {
     private void UpdateAvatarRotation()
     {
         float rotationInput = 0f;
-
-        //mobile input
         if (Application.isMobilePlatform)
         {
-
-            //if user has tapped screen
             if (Input.touchCount == 1)
             {
                 if (Input.GetTouch(0).position.x < Screen.width * 0.5f)
@@ -94,48 +90,86 @@ public class Player : MonoBehaviour {
                     rotationInput = 1f;
                 }
             }
-            /* //if user has swiped
-             else
-             {
-                 Touch myTouch = Input.touches[0];
-
-                 if (myTouch.phase == TouchPhase.Began)
-                 {
-                     touchOrigin = myTouch.position;
-                 }
-                 else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
-                 {
-                     Vector2 touchEnd = myTouch.position;
-                     float x = touchEnd
-                 }
-             }*/
         }
-
-        //keyboard input
         else
         {
-            //if (inputDirection == InputDirection.Left || inputDirection == InputDirection.Right)
-            // {
-
             rotationInput = Input.GetAxis("Horizontal");
+        }
+        avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
+        if (avatarRotation < 0f)
+        {
+            avatarRotation += 360f;
+        }
+        else if (avatarRotation >= 360f)
+        {
+            avatarRotation -= 360f;
+        }
+        rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
+    }
 
-            avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
-            if (avatarRotation < 0f)
-            {
-                avatarRotation += 360f;
-            }
-            else if (avatarRotation >= 360f)
-            {
-                avatarRotation -= 360f;
-            }
-            rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
-            /* }
-             else if (inputDirection == InputDirection.Top)
+
+
+
+    /* float rotationInput = 0f;
+
+     //mobile input
+     if (Application.isMobilePlatform)
+     {
+
+         //if user has tapped screen
+         if (Input.touchCount == 1)
+         {
+             if (Input.GetTouch(0).position.x < Screen.width * 0.5f)
              {
-                 rotater.localRotation = Quaternion.Euler(0f, 8.0f, 0f);
-             }*/
+                 rotationInput = -1f;
+             }
+             else
+             {
+                 rotationInput = 1f;
+             }
          }
-	}
+          //if user has swiped
+          else
+          {
+              Touch myTouch = Input.touches[0];
+
+              if (myTouch.phase == TouchPhase.Began)
+              {
+                  touchOrigin = myTouch.position;
+              }
+              else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
+              {
+                  Vector2 touchEnd = myTouch.position;
+                  float x = touchEnd
+              }
+          }
+     }
+
+     //keyboard input
+     else
+     {
+         //if (inputDirection == InputDirection.Left || inputDirection == InputDirection.Right)
+         // {
+
+         rotationInput = Input.GetAxis("Horizontal");
+
+         avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
+         if (avatarRotation < 0f)
+         {
+             avatarRotation += 360f;
+         }
+         else if (avatarRotation >= 360f)
+         {
+             avatarRotation -= 360f;
+         }
+     }
+         rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
+         /* }
+          else if (inputDirection == InputDirection.Top)
+          {
+              rotater.localRotation = Quaternion.Euler(0f, 8.0f, 0f);
+          }*/
+
 
 	private void SetupCurrentPipe () {
 		deltaToRotation = 360f / (2f * Mathf.PI * currentPipe.CurveRadius);
