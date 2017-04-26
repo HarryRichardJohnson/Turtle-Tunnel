@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 
 	private Pipe currentPipe;
 
-	private float acceleration, velocity;
+	public float acceleration, velocity;
 	private float distanceTraveled;
 	private float deltaToRotation;
 	private float systemRotation;

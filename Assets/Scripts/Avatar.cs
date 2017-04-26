@@ -26,6 +26,7 @@ public class Avatar : MonoBehaviour {
 			trail.enableEmission = false;
 			burst.Emit(burst.maxParticles);
 			deathCountdown = burst.startLifetime;
+            player.velocity = 0.0f;
 		}
 	}
 	
