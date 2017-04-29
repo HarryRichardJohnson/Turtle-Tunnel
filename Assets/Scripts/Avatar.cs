@@ -6,12 +6,18 @@ public class Avatar : MonoBehaviour {
     public MainMenu mainMenu;
 
 	private Player player;
+    private Rigidbody rb;
 
     private int coinScore = 1;
 
     public float deathCountdown = -1f;
 
-	private void Awake () {
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void Awake () {
 		player = transform.root.GetComponent<Player>();
 	}
 
@@ -29,8 +35,16 @@ public class Avatar : MonoBehaviour {
             player.velocity = 0.0f;
 		}
 	}
-	
-	private void Update () {
+
+    public void Jump()
+    {
+        rb.AddForce(0, 0, 8.0f, ForceMode.Force);
+        //rb.AddForce(transform.forward * 8.0f);
+       // rb.AddForce(Vector3.up * 8.0f);//, ForceMode.Impulse);
+        print("did I jump?");
+    }
+
+        private void Update () {
 		if (deathCountdown >= 0f) {
 			deathCountdown -= Time.deltaTime;
 			if (deathCountdown <= 0f) {

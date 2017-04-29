@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
 	private float deltaToRotation;
 	private float systemRotation;
 	private float worldRotation, avatarRotation;
+    public Avatar avatar;
 
     private Vector2 touchOrigin = -Vector2.one;
 
@@ -91,6 +92,11 @@ public class Player : MonoBehaviour {
                 }
             }
         }
+
+        else if (Input.GetKeyDown(KeyCode.UpArrow)){
+            print("I am jumping");
+            avatar.Jump();
+        }
         else
         {
             rotationInput = Input.GetAxis("Horizontal");
@@ -104,6 +110,7 @@ public class Player : MonoBehaviour {
         {
             avatarRotation -= 360f;
         }
+
         rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
     }
 
