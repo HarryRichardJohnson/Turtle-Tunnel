@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.Assertions;
 
 public class Player : MonoBehaviour {
 
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour {
 	private Transform world, rotater;
 
 	public void StartGame (int accelerationMode) {
+		
 		distanceTraveled = 0f;
 		avatarRotation = 0f;
 		systemRotation = 0f;
@@ -43,6 +45,7 @@ public class Player : MonoBehaviour {
 	public void Die () {
 		mainMenu.EndGame(distanceTraveled);
 		gameObject.SetActive(false);
+
 	}
 
 	private void Awake () {
@@ -66,13 +69,24 @@ public class Player : MonoBehaviour {
 
 		pipeSystem.transform.localRotation =
 			Quaternion.Euler(0f, 0f, systemRotation);
-
+		
 		UpdateAvatarRotation();
 
-        //add gravity
+		GetMouseInput ();
+
+		//add gravity
         //rotater.localRotation = Quaternion.Euler(0f, -8.0f, 0f);
 
         hud.SetValues(distanceTraveled, velocity);
+	}
+
+	private void GetMouseInput(){
+		
+		if ((Input.GetMouseButton (0)) || (Input.GetMouseButton(1))) {
+			Vector3 mousePos = Input.mousePosition;
+			Debug.Log ("X Co-ordinate:" + mousePos.x);
+			Debug.Log ("Y Co-ordinate:" + mousePos.y);
+		}
 	}
 
     private void UpdateAvatarRotation()

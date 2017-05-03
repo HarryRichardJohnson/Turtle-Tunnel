@@ -17,98 +17,100 @@ public class NewEditModeTest {
 	[Test]
 	public void T01ChangeScene() {
 		//Change Scene test
-		ChangeScene changescene = new ChangeScene();
-		Assert.AreEqual("Main Menu", changescene);
+//		ChangeScene changescene = new ChangeScene();
+//		Assert.AreEqual("Main Menu", changescene);
 	}
 
 	//CoinBehaviour
-		
-	[Test]
-	public void T02CoinTaken() {
-		//Coin is taken
-	}
 
 	[Test]
-	public void T03CoinExisits(){
+	public void T02CoinExists(){
+		Collider collider = new Collider ();
+		bool doesExist = true;
 
-	}
-
-
-	[Test]
-	public void T04PlayerMovesRight(){
-		//turtle moves left
-	}
-
-	[Test]
-	public void T05PlayerMovesLeft(){
-		//turtle moves left
+		if ((collider.gameObject.CompareTag ("Coin")) != null) {
+			Assert.IsTrue (doesExist);
+		} else {
+			Assert.IsFalse (doesExist);
+		}
 	}
 
 
 	[Test]
-	public void T06TurtleExisits(){
-
+	public void T03TurtleExisits(){
+		if (GameObject.Find ("Turtle")) {
+			Debug.Log ("Turtle Exists");
+		} else {
+			Debug.Log ("Turtlr doesn't exist");
+		}
 	}
 
 	[Test]
-	public void T06TunnelExisits(){
+	public void T04TunnelExisits(){
 		//Update
 
 	}
 
 
 	[Test]
-	public void T08PipeExisits(){
-		//SetUpPipe
+	public void T05PipeExisits(){
+		if (GameObject.Find ("Pipe System")) {
+			Debug.Log ("Pipes Exists");
+		} else {
+			Debug.Log ("Pipes doesn't exist");
+		}
 	}
+
 
 	[Test] 
-	public void T09PipeTurns(){
+	public void T06ObstacleExisit(){
+		/*bool exists = false;
 
+		if (item.gameObject != 0) {
+			Assert.IsTrue (exists);
+			Debug.Log ("Obstacles Exists!");
+		} else {
+			Assert.IsFalse (exists);
+			Debug.Log ("Obstacles does not exist!");
+		}*/
 	}
 
-	[Test] 
-	public void T10ObstacleExisit(){
 
+	[Test]
+	public void T07CoinRotates(){
+		CoinBehaviour cb = new CoinBehaviour ();
+		Assert.AreEqual (cb.rotateSpeed, 50f);
 	}
 
 	[Test]
-	public void T11ObstacleInView(){
-
-	}
-
-	[Test]
-	public void T12CoinInView(){
-
-	}
-
-	[Test]
-	public void T13CoinRotates(){
-
-	}
-
-	[Test]
-	public void T14GameGetsFaster(){
-		
+	public void T08GameGetsFaster(){
+	/*	bool gamsIsFaster = false;
+		Player player = new Player ();
+		if (player.accelerations.Length != 0) {
+			Assert.IsTrue (gamsIsFaster);
+		} else {
+			Assert.IsFalse (gamsIsFaster);
+		}*/
 	} 
 
 	[Test]
-	public void T15MenuToSettings(){
+	public void T09MenuToSettings(){
+		MainMenu mm = new MainMenu ();
 
 	}
 
 	[Test]
-	public void T16MenuToGame(){
+	public void T10MenuToGame(){
 
 	}
 
 	[Test]
-	public void T17MenuToInstructions(){
+	public void T11MenuToInstructions(){
 
 	}
 
 	[Test]
-	public void T18TurtleJumps(){
+	public void T12TurtleJumps(){
 
 	}
 

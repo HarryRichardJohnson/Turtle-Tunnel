@@ -25,7 +25,8 @@ public class Avatar : MonoBehaviour {
         if (collider.gameObject.CompareTag("Coin"))
         {
             mainMenu.UpdateCoinScore(coinScore);
-            Destroy(collider.gameObject);
+            Destroy(collider.gameObject); 
+			print ("Got the coin!");
         }
 		if (!collider.gameObject.CompareTag("Coin") && deathCountdown < 0f) {
 			shape.enableEmission = false;
@@ -54,5 +55,7 @@ public class Avatar : MonoBehaviour {
 				player.Die();
 			}
 		}
+
+
 	}
 }
