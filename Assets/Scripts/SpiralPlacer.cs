@@ -1,7 +1,13 @@
-﻿using UnityEngine;
+﻿/*
+This script holds variables and methods used in creating a spiral obstacle in the pipe.
+It is a subclass of PipeItemGenerator and overrides its generateItems method.
+*/
+
+using UnityEngine;
 
 public class SpiralPlacer : PipeItemGenerator {
 
+    //Instance variables
 	public PipeItem[] itemPrefabs;
 
 	public override void GenerateItems (Pipe pipe) {

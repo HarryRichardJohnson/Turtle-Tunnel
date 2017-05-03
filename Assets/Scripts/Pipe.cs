@@ -1,7 +1,13 @@
-﻿using UnityEngine;
+﻿/*
+This script holds instance variables and methods used to create the pipe in game
+It uses a complex algoritm where vectors are allocated to create each segment of the pipe
+*/
+
+using UnityEngine;
 
 public class Pipe : MonoBehaviour {
 
+    //Instance variables
 	public float pipeRadius;
 	public int pipeSegmentCount;
 
@@ -23,24 +29,28 @@ public class Pipe : MonoBehaviour {
 	private float curveAngle;
 	private float relativeRotation;
 
+    //Gets the curve angle of the pipe
 	public float CurveAngle {
 		get {
 			return curveAngle;
 		}
 	}
 
+    //Gets the curve radius of the pipe
 	public float CurveRadius {
 		get {
 			return curveRadius;
 		}
 	}
 
+    //Gets the relative rotation of the turtle in the pipe
 	public float RelativeRotation {
 		get {
 			return relativeRotation;
 		}
 	}
 
+    //Gets which segment of the pipe the game is currently up to
 	public int CurveSegmentCount {
 		get {
 			return curveSegmentCount;
@@ -52,6 +62,8 @@ public class Pipe : MonoBehaviour {
 		mesh.name = "Pipe";
 	}
 
+    //This method generates the pipe using a random range between two set values for the radius
+    // as well as random range for the amount of segments.
 	public void Generate (bool withItems = true) {
 		curveRadius = Random.Range(minCurveRadius, maxCurveRadius);
 		curveSegmentCount =
@@ -70,6 +82,7 @@ public class Pipe : MonoBehaviour {
 		}
 	}
 
+    //Sets the vertices for a pipe segment
 	private void SetVertices () {
 		vertices = new Vector3[pipeSegmentCount * curveSegmentCount * 4];
 
@@ -83,6 +96,7 @@ public class Pipe : MonoBehaviour {
 		mesh.vertices = vertices;
 	}
 
+    //Creates the first segment of the pipe. Used so that the first segment is seperated from the other segments
 	private void CreateFirstQuadRing (float u) {
 		float vStep = (2f * Mathf.PI) / pipeSegmentCount;
 
@@ -96,6 +110,7 @@ public class Pipe : MonoBehaviour {
 		}
 	}
 
+    //Creates every other segment of the pipe
 	private void CreateQuadRing (float u, int i) {
 		float vStep = (2f * Mathf.PI) / pipeSegmentCount;
 		int ringOffset = pipeSegmentCount * 4;
@@ -140,6 +155,7 @@ public class Pipe : MonoBehaviour {
 		return p;
 	}
 
+    //This method aligns the user with the pipe as the pipe rotates and twists so the turtle is relative to the pipe.
 	public void AlignWith (Pipe pipe) {
 		relativeRotation =
 			Random.Range(0, curveSegmentCount) * 360f / pipeSegmentCount;
