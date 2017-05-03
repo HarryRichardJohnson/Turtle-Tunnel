@@ -1,0 +1,106 @@
+﻿using UnityEngine;
+using UnityEditor;
+using NUnit.Framework;
+using System.Collections;
+
+[TestFixture]
+public class TurtleTunnelUnitTests {
+
+
+	//Tests
+	GameTest gameTest = new GameTest ();
+
+
+	//CoinBehaviour
+
+	[Test]
+	public void T02CoinExists(){
+		Collider collider = new Collider ();
+		bool doesExist = true;
+		if ((collider.gameObject.CompareTag ("Coin")) != null) {
+			Assert.IsTrue (doesExist);
+		} else {
+			Assert.IsFalse (doesExist);
+		}
+	}
+
+
+	[Test]
+	public void T03TurtleExisits(){
+		if (GameObject.Find ("Turtle")) {
+			Debug.Log ("Turtle Exists");
+		} else {
+			Debug.Log ("Turtle doesn't exist");
+		}
+	}
+
+	[Test]
+	public void T04GameStarts(){
+		//Update
+
+
+	}
+
+	[Test]
+	public void T05GameEnds(){
+		
+	}
+
+
+	[Test]
+	public void T05PipeExisits(){
+		if (GameObject.Find ("Pipe System")) {
+			Debug.Log ("Pipes Exists");
+		} else {
+			Debug.Log ("Pipes doesn't exist");
+		}
+	}
+
+
+	[Test] 
+	public void T06ObstacleExisit(){
+		/*bool exists = false;
+
+		if (item.gameObject != 0) {
+			Assert.IsTrue (exists);
+			Debug.Log ("Obstacles Exists!");
+		} else {
+			Assert.IsFalse (exists);
+			Debug.Log ("Obstacles does not exist!");
+		}*/
+	}
+
+
+	[Test]
+	public void T07CoinRotates(){
+		CoinBehaviour cb = new CoinBehaviour ();
+		Assert.AreEqual (cb.rotateSpeed, 50f);
+	}
+
+	[Test]
+	public void T08GameGetsFaster(){
+		//bool gamsIsFaster = false;
+		//gameTest.startGame();
+		//Assert.IsTrue(gameTest());
+		/*
+		if (player.accelerations.Length != 0) {
+			Assert.IsTrue (gamsIsFaster);
+		} else {
+			Assert.IsFalse (gamsIsFaster);
+		}*/
+	} 
+
+	[Test]
+	public void T09MenuToSettings(){
+		MainMenu mm = new MainMenu ();
+	
+	}
+
+	
+	[Test]
+	public void T12TurtleJumps(){
+
+	}
+
+
+}

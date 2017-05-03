@@ -13,18 +13,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 3}
-  - {fileID: 5}
-  - {fileID: 11}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1350
-    height: 666
-  m_MinSize: {x: 713, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+    width: 1280
+    height: 701
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 600
+  controlID: 5340
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -47,10 +45,10 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 426
-    y: 100
-    width: 653
-    height: 371
+    x: 777
+    y: 518
+    width: 503
+    height: 256
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
@@ -59,10 +57,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -326.5
-    m_HBaseRangeMax: 326.5
-    m_VBaseRangeMin: -177
-    m_VBaseRangeMax: 177
+    m_HBaseRangeMin: -79.66667
+    m_HBaseRangeMax: 79.66667
+    m_VBaseRangeMin: -119.5
+    m_VBaseRangeMax: 119.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -79,29 +77,78 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 653
-      height: 354
+      width: 503
+      height: 239
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 326.5, y: 177}
+    m_Translation: {x: 251.5, y: 119.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -326.5
-      y: -177
-      width: 653
-      height: 354
+      x: -251.5
+      y: -119.5
+      width: 503
+      height: 239
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 653, y: 371}
+  m_LastWindowPixelSize: {x: 1006, y: 512}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
 --- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 4}
+  - {fileID: 12}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1280
+    height: 701
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+  vertical: 1
+  controlID: 5341
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 5}
+  - {fileID: 7}
+  - {fileID: 10}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1280
+    height: 424
+  m_MinSize: {x: 683, y: 221}
+  m_MaxSize: {x: 12008, y: 4021}
+  vertical: 0
+  controlID: 5342
+--- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -117,16 +164,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 416
-    height: 666
+    width: 202
+    height: 424
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 4}
+  m_ActualView: {fileID: 6}
   m_Panes:
-  - {fileID: 4}
+  - {fileID: 6}
   m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &4
+  m_LastSelected: 0
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -148,62 +195,38 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 100
-    width: 414
-    height: 645
+    x: 0
+    y: 94
+    width: 200
+    height: 403
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 66ecffffdcfbffff00000000de2b00000e2c00003e2c00006a2c0000802c00008a2c0000b82c0000
+    m_SelectedIDs: 00efffff
+    m_LastClickedID: -4352
+    m_ExpandedIDs: a8e6ffffaae6ffff02efffffacf2ffffdefbffff000000003e32000062320000a4320000e6320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Turtle
+      m_OriginalName: Turtle
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -4352
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 3}
+      m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ExpandedScenes:
   - Game
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
---- !u!114 &5
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 6}
-  - {fileID: 8}
-  m_Position:
-    serializedVersion: 2
-    x: 416
-    y: 0
-    width: 657
-    height: 666
-  m_MinSize: {x: 234, y: 492}
-  m_MaxSize: {x: 10004, y: 14042}
-  vertical: 1
-  controlID: 601
---- !u!114 &6
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -217,19 +240,734 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 0
+    x: 202
     y: 0
-    width: 657
-    height: 392
-  m_MinSize: {x: 204, y: 221}
+    width: 279
+    height: 424
+  m_MinSize: {x: 279, y: 71}
   m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 2}
+  m_ActualView: {fileID: 8}
   m_Panes:
-  - {fileID: 7}
-  - {fileID: 2}
-  m_Selected: 1
+  - {fileID: 8}
+  - {fileID: 9}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoRepaintOnSceneChange: 0
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_DepthBufferBits: 0
+  m_Pos:
+    serializedVersion: 2
+    x: 204
+    y: 94
+    width: 275
+    height: 403
+  m_ScrollPosition: {x: 0, y: 578.9551}
+  m_InspectorMode: 0
+  m_PreviewResizer:
+    m_CachedPref: 160
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_PreviewWindow: {fileID: 0}
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoRepaintOnSceneChange: 0
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_DepthBufferBits: 0
+  m_Pos:
+    serializedVersion: 2
+    x: 204
+    y: 94
+    width: 275
+    height: 403
+  m_IsSceneBased: 0
+  m_TestTypeToolbarIndex: 1
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 9}
+    newResultList:
+    - id: '[TurtleTunnel]'
+      name: TurtleTunnel
+      fullName: TurtleTunnel
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp.dll]'
+      name: Assembly-CSharp.dll
+      fullName: /Users/caseyglover/Projects/repos/Master/Library/ScriptAssemblies/Assembly-CSharp.dll
+      resultStatus: 2
+      duration: 0
+      messages: Has no TestFixtures
+      output: 
+      stacktrace: 
+      notRunnable: 1
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-UnityScript.dll]'
+      name: Assembly-UnityScript.dll
+      fullName: /Users/caseyglover/Projects/repos/Master/Library/ScriptAssemblies/Assembly-UnityScript.dll
+      resultStatus: 2
+      duration: 0
+      messages: Has no TestFixtures
+      output: 
+      stacktrace: 
+      notRunnable: 1
+      ignoredOrSkipped: 0
+      description: 
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 7edb4dc2ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 9}
+    newResultList:
+    - id: '[TurtleTunnel]'
+      name: TurtleTunnel
+      fullName: TurtleTunnel
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll]'
+      name: Assembly-CSharp-Editor.dll
+      fullName: /Users/caseyglover/Projects/repos/Master/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+      resultStatus: 2
+      duration: 0.918099
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest]'
+      name: NewEditModeTest
+      fullName: NewEditModeTest
+      resultStatus: 1
+      duration: 0.337952
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][NewEditModeTestSimplePasses]'
+      name: NewEditModeTestSimplePasses
+      fullName: NewEditModeTest.NewEditModeTestSimplePasses
+      resultStatus: 1
+      duration: 0.004571
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][NewEditModeTestWithEnumeratorPasses]'
+      name: NewEditModeTestWithEnumeratorPasses
+      fullName: NewEditModeTest.NewEditModeTestWithEnumeratorPasses
+      resultStatus: 1
+      duration: 0.016112
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T02CoinTaken]'
+      name: T02CoinTaken
+      fullName: NewEditModeTest.T02CoinTaken
+      resultStatus: 1
+      duration: 0.003733
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T03CoinExisits]'
+      name: T03CoinExisits
+      fullName: NewEditModeTest.T03CoinExisits
+      resultStatus: 1
+      duration: 0.004215
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T04PlayerMovesRight]'
+      name: T04PlayerMovesRight
+      fullName: NewEditModeTest.T04PlayerMovesRight
+      resultStatus: 1
+      duration: 0.004094
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T05PlayerMovesLeft]'
+      name: T05PlayerMovesLeft
+      fullName: NewEditModeTest.T05PlayerMovesLeft
+      resultStatus: 1
+      duration: 0.003929
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T06TunnelExisits]'
+      name: T06TunnelExisits
+      fullName: NewEditModeTest.T06TunnelExisits
+      resultStatus: 1
+      duration: 0.004052
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T06TurtleExisits]'
+      name: T06TurtleExisits
+      fullName: NewEditModeTest.T06TurtleExisits
+      resultStatus: 1
+      duration: 0.004534
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T08PipeExisits]'
+      name: T08PipeExisits
+      fullName: NewEditModeTest.T08PipeExisits
+      resultStatus: 1
+      duration: 0.004359
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T09PipeTurns]'
+      name: T09PipeTurns
+      fullName: NewEditModeTest.T09PipeTurns
+      resultStatus: 1
+      duration: 0.004157
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T10ObstacleExisit]'
+      name: T10ObstacleExisit
+      fullName: NewEditModeTest.T10ObstacleExisit
+      resultStatus: 1
+      duration: 0.004454
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T11ObstacleInView]'
+      name: T11ObstacleInView
+      fullName: NewEditModeTest.T11ObstacleInView
+      resultStatus: 1
+      duration: 0.003756
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T12CoinInView]'
+      name: T12CoinInView
+      fullName: NewEditModeTest.T12CoinInView
+      resultStatus: 1
+      duration: 0.003931
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T13CoinRotates]'
+      name: T13CoinRotates
+      fullName: NewEditModeTest.T13CoinRotates
+      resultStatus: 1
+      duration: 0.003846
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T14GameGetsFaster]'
+      name: T14GameGetsFaster
+      fullName: NewEditModeTest.T14GameGetsFaster
+      resultStatus: 1
+      duration: 0.004024
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T15MenuToSettings]'
+      name: T15MenuToSettings
+      fullName: NewEditModeTest.T15MenuToSettings
+      resultStatus: 1
+      duration: 0.004467
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T16MenuToGame]'
+      name: T16MenuToGame
+      fullName: NewEditModeTest.T16MenuToGame
+      resultStatus: 1
+      duration: 0.003898
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T17MenuToInstructions]'
+      name: T17MenuToInstructions
+      fullName: NewEditModeTest.T17MenuToInstructions
+      resultStatus: 1
+      duration: 0.004625
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][NewEditModeTest][T18TurtleJumps]'
+      name: T18TurtleJumps
+      fullName: NewEditModeTest.T18TurtleJumps
+      resultStatus: 1
+      duration: 0.004261
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest]'
+      name: UnityTest
+      fullName: UnityTest
+      resultStatus: 2
+      duration: 0.552255
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests]'
+      name: SampleTests
+      fullName: UnityTest.SampleTests
+      resultStatus: 2
+      duration: 0.539838
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][CultureSpecificTest]'
+      name: CultureSpecificTest
+      fullName: UnityTest.SampleTests.CultureSpecificTest
+      resultStatus: 4
+      duration: 0.000428
+      messages: Only supported under culture pl-PL
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 1
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][ExceptionTest]'
+      name: ExceptionTest
+      fullName: UnityTest.SampleTests.ExceptionTest
+      resultStatus: 2
+      duration: 0.007357
+      messages: 'System.Exception : Exception throwing test'
+      output: 
+      stacktrace: "  at UnityTest.SampleTests.ExceptionTest () [0x00006] in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:17
+        \n  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke
+        (object,object[],System.Exception&)\n  at System.Reflection.MonoMethod.Invoke
+        (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder,
+        System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d0]
+        in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][FailingTest]'
+      name: FailingTest
+      fullName: UnityTest.SampleTests.FailingTest
+      resultStatus: 2
+      duration: 0.007372
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.FailingTest () [0x00001] in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:39
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][IgnoredTest]'
+      name: IgnoredTest
+      fullName: UnityTest.SampleTests.IgnoredTest
+      resultStatus: 4
+      duration: 0.000024
+      messages: Ignored test
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 1
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][InconclusiveTest]'
+      name: InconclusiveTest
+      fullName: UnityTest.SampleTests.InconclusiveTest
+      resultStatus: 3
+      duration: 0.005062
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.InconclusiveTest () [0x00001] in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:46
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][ParameterizedTest]'
+      name: ParameterizedTest
+      fullName: UnityTest.SampleTests.ParameterizedTest
+      resultStatus: 1
+      duration: 0.043634
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][ParameterizedTest][ParameterizedTest(1)]'
+      name: ParameterizedTest(1)
+      fullName: UnityTest.SampleTests.ParameterizedTest(1)
+      resultStatus: 1
+      duration: 0.004795
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.ParameterizedTest (Int32 a) [0x00001]
+        in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:58
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][ParameterizedTest][ParameterizedTest(2)]'
+      name: ParameterizedTest(2)
+      fullName: UnityTest.SampleTests.ParameterizedTest(2)
+      resultStatus: 1
+      duration: 0.00402
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.ParameterizedTest (Int32 a) [0x00001]
+        in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:58
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][ParameterizedTest][ParameterizedTest(3)]'
+      name: ParameterizedTest(3)
+      fullName: UnityTest.SampleTests.ParameterizedTest(3)
+      resultStatus: 1
+      duration: 0.003987
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.ParameterizedTest (Int32 a) [0x00001]
+        in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:58
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][PassingTest]'
+      name: PassingTest
+      fullName: UnityTest.SampleTests.PassingTest
+      resultStatus: 1
+      duration: 0.004487
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.PassingTest () [0x00001] in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:52
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][RangeTest]'
+      name: RangeTest
+      fullName: UnityTest.SampleTests.RangeTest
+      resultStatus: 1
+      duration: 0.060124
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][RangeTest][RangeTest(1)]'
+      name: RangeTest(1)
+      fullName: UnityTest.SampleTests.RangeTest(1)
+      resultStatus: 1
+      duration: 0.004407
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.RangeTest (Int32 x) [0x00001] in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:64
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][RangeTest][RangeTest(4)]'
+      name: RangeTest(4)
+      fullName: UnityTest.SampleTests.RangeTest(4)
+      resultStatus: 1
+      duration: 0.003969
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.RangeTest (Int32 x) [0x00001] in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:64
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][RangeTest][RangeTest(7)]'
+      name: RangeTest(7)
+      fullName: UnityTest.SampleTests.RangeTest(7)
+      resultStatus: 1
+      duration: 0.00385
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.RangeTest (Int32 x) [0x00001] in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:64
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][RangeTest][RangeTest(10)]'
+      name: RangeTest(10)
+      fullName: UnityTest.SampleTests.RangeTest(10)
+      resultStatus: 1
+      duration: 0.004106
+      messages: 
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.RangeTest (Int32 x) [0x00001] in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:64
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][SlowTest]'
+      name: SlowTest
+      fullName: UnityTest.SampleTests.SlowTest
+      resultStatus: 2
+      duration: 0.20507
+      messages: Elapsed time of 204.675ms exceeds maximum of 100ms
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][SquareRootDefinition]'
+      name: SquareRootDefinition
+      fullName: UnityTest.SampleTests.SquareRootDefinition
+      resultStatus: 1
+      duration: 0.084649
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][SquareRootDefinition][SquareRootDefinition(0.0d)]'
+      name: SquareRootDefinition(0.0d)
+      fullName: UnityTest.SampleTests.SquareRootDefinition(0.0d)
+      resultStatus: 1
+      duration: 0.011877
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][SquareRootDefinition][SquareRootDefinition(1.0d)]'
+      name: SquareRootDefinition(1.0d)
+      fullName: UnityTest.SampleTests.SquareRootDefinition(1.0d)
+      resultStatus: 1
+      duration: 0.003647
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][SquareRootDefinition][SquareRootDefinition(-1.0d)]'
+      name: SquareRootDefinition(-1.0d)
+      fullName: UnityTest.SampleTests.SquareRootDefinition(-1.0d)
+      resultStatus: 3
+      duration: 0.00459
+      messages: "  Expected: True\n  But was:  False\n"
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.SquareRootDefinition (Double num) [0x0001f]
+        in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:89
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][SquareRootDefinition][SquareRootDefinition(double.MaxValue)]'
+      name: SquareRootDefinition(double.MaxValue)
+      fullName: UnityTest.SampleTests.SquareRootDefinition(double.MaxValue)
+      resultStatus: 3
+      duration: 0.004281
+      messages: "  Expected: True\n  But was:  False\n"
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.SquareRootDefinition (Double num) [0x0001f]
+        in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:89
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[TurtleTunnel][Assembly-CSharp-Editor.dll][UnityTest][SampleTests][SquareRootDefinition][SquareRootDefinition(double.PositiveInfinity)]'
+      name: SquareRootDefinition(double.PositiveInfinity)
+      fullName: UnityTest.SampleTests.SquareRootDefinition(double.PositiveInfinity)
+      resultStatus: 3
+      duration: 0.004265
+      messages: "  Expected: True\n  But was:  False\n"
+      output: 
+      stacktrace: 'at UnityTest.SampleTests.SquareRootDefinition (Double num) [0x0001f]
+        in /Users/caseyglover/Projects/repos/Master/Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs:89
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    m_ResultText: NewEditModeTest (0.338s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: fb02f52f
+      m_LastClickedID: 804586235
+      m_ExpandedIDs: 1f21ffbf7edb4dc2de7c59f4aeb0d7fefb02f52fd3d2d46c1b808478ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 481
+    y: 0
+    width: 799
+    height: 424
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 11}
+  m_Panes:
+  - {fileID: 11}
+  m_Selected: 0
   m_LastSelected: 0
---- !u!114 &7
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -251,19 +989,19 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 426
-    y: 100
-    width: 653
-    height: 371
+    x: 483
+    y: 94
+    width: 797
+    height: 403
   m_SceneLighting: 1
-  lastFramingTime: 317.17237597703934
+  lastFramingTime: 9390.303938031197
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: -0.0029415935, y: -0.75252885, z: -0.0006651059}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: -0.0029415935, y: -0.75252885, z: -0.0006651059}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -290,9 +1028,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 22
+    m_Target: 1.1706771
     speed: 2
-    m_Value: 22
+    m_Value: 1.1706771
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -303,7 +1041,31 @@ MonoBehaviour:
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &8
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 13}
+  - {fileID: 16}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 424
+    width: 1280
+    height: 277
+  m_MinSize: {x: 432, y: 271}
+  m_MaxSize: {x: 14002, y: 10021}
+  vertical: 0
+  controlID: 5507
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -318,18 +1080,18 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 392
-    width: 657
-    height: 274
-  m_MinSize: {x: 234, y: 271}
-  m_MaxSize: {x: 10004, y: 10021}
-  m_ActualView: {fileID: 9}
+    y: 0
+    width: 775
+    height: 277
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 9}
-  - {fileID: 10}
+  - {fileID: 14}
+  - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 1
---- !u!114 &9
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -351,10 +1113,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 426
-    y: 492
-    width: 653
-    height: 253
+    x: 0
+    y: 518
+    width: 773
+    height: 256
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -366,19 +1128,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: 57
-  m_LastProjectPath: /Users/user/Turtle Tunnel/Turtle-Tunnel/Turtle-Tunnel
+  m_LastProjectPath: /Users/caseyglover/Projects/repos/Master
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 248}
-    m_SelectedIDs: 7e260000
-    m_LastClickedID: 9854
-    m_ExpandedIDs: 00000000e6250000762600000827000062270000a4270000aa270000f62700006e280000cc280000e628000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 33}
+    m_SelectedIDs: 70260000
+    m_LastClickedID: 9840
+    m_ExpandedIDs: 00000000e02500002a2600003426000070260000fe2600000a2700000e2700009a270000ba270000ea2700007e2800009a280000c2280000dc28000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -394,7 +1156,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 8}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -406,7 +1168,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e6250000762600000827000062270000a4270000aa270000f62700006e280000cc280000e628000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000e02500002a2600003426000070260000fe2600000a2700000e2700009a270000ba270000ea2700007e2800009a280000c2280000dc28000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -431,10 +1193,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 0e2c0000
-    m_LastClickedInstanceID: 11278
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 3e380000
+    m_SelectedInstanceIDs: 00efffff
+    m_LastClickedInstanceID: -4352
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: 1e290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -460,8 +1222,8 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 57
-  m_DirectoriesAreaWidth: 210
---- !u!114 &10
+  m_DirectoriesAreaWidth: 166
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -483,11 +1245,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 428
-    y: 492
-    width: 653
-    height: 253
---- !u!114 &11
+    x: 0
+    y: 518
+    width: 773
+    height: 256
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -501,47 +1263,14 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1073
+    x: 775
     y: 0
-    width: 277
-    height: 666
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 12}
+    width: 505
+    height: 277
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 2}
   m_Panes:
-  - {fileID: 12}
+  - {fileID: 2}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &12
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AutoRepaintOnSceneChange: 0
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Inspector
-    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_DepthBufferBits: 0
-  m_Pos:
-    serializedVersion: 2
-    x: 1083
-    y: 100
-    width: 275
-    height: 645
-  m_ScrollPosition: {x: 0, y: 0}
-  m_InspectorMode: 0
-  m_PreviewResizer:
-    m_CachedPref: 160
-    m_ControlHash: -371814159
-    m_PrefName: Preview_InspectorPreview
-  m_PreviewWindow: {fileID: 0}

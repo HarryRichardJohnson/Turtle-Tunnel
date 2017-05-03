@@ -129,6 +129,10 @@ public class Pipe : MonoBehaviour {
 			triangles[t + 5] = i + 3;
 		}
 		mesh.triangles = triangles;
+		transform.gameObject.AddComponent<MeshCollider>();
+		transform.GetComponent<MeshCollider>().sharedMesh = mesh;
+		//transform.gameObject.AddComponent<MeshFilter>();
+
 	}
 
 	private Vector3 GetPointOnTorus (float u, float v) {
