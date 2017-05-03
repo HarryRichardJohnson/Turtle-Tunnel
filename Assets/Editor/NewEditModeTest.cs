@@ -3,15 +3,14 @@ using UnityEditor;
 using NUnit.Framework;
 using System.Collections;
 
-[TestFixture]
 public class NewEditModeTest {
-
 
 	[Test]
 	public void NewEditModeTestSimplePasses() {
 		// Use the Assert class to test conditions.
 	}
 
+<<<<<<< HEAD
 	//Tests
 
 	[Test]
@@ -116,6 +115,8 @@ public class NewEditModeTest {
 
 
 
+=======
+>>>>>>> parent of 97869c5... Tests to be completed
 	// A UnityTest behaves like a coroutine in PlayMode
 	// and allows you to yield null to skip a frame in EditMode
 /*	[UnityTest]
@@ -123,7 +124,11 @@ public class NewEditModeTest {
 		// Use the Assert class to test conditions.
 		// yield to skip a frame
 		yield return null;
+<<<<<<< HEAD
 	}*/
 
 
+=======
+	}
+>>>>>>> parent of 97869c5... Tests to be completed
 }
