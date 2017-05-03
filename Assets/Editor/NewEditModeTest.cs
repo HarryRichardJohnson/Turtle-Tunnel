@@ -11,6 +11,7 @@ public class NewEditModeTest {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	//Tests
 
 	[Test]
@@ -117,6 +118,8 @@ public class NewEditModeTest {
 
 =======
 >>>>>>> parent of 97869c5... Tests to be completed
+=======
+>>>>>>> parent of 97869c5... Tests to be completed
 	// A UnityTest behaves like a coroutine in PlayMode
 	// and allows you to yield null to skip a frame in EditMode
 /*	[UnityTest]
@@ -125,9 +128,13 @@ public class NewEditModeTest {
 		// yield to skip a frame
 		yield return null;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	}*/
 
 
+=======
+	}
+>>>>>>> parent of 97869c5... Tests to be completed
 =======
 	}
 >>>>>>> parent of 97869c5... Tests to be completed
