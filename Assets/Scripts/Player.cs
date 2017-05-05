@@ -1,16 +1,9 @@
-﻿/*
-This method holds instance variables and methods used by the player character in game
-It deals with collision, distance travelled, velocity and position in the pipe.
-*/
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityEngine.Assertions;
 
 public class Player : MonoBehaviour {
 
-    //Instance variables
 	public PipeSystem pipeSystem;
 
 	public float startVelocity;
@@ -27,14 +20,14 @@ public class Player : MonoBehaviour {
 	private float distanceTraveled;
 	private float deltaToRotation;
 	private float systemRotation;
-	private float worldRotation, avatarRotation;
+	private float worldRotation;
+	public float avatarRotation;
     public Avatar avatar;
 
     private Vector2 touchOrigin = -Vector2.one;
 
 	private Transform world, rotater;
 
-    //This method initialises the player when a new game is started
 	public void StartGame (int accelerationMode) {
 		distanceTraveled = 0f;
 		avatarRotation = 0f;
@@ -48,11 +41,9 @@ public class Player : MonoBehaviour {
 		hud.SetValues(distanceTraveled, velocity);
 	}
 
-    //This method switches the scene to the end screen when player has died.
 	public void Die () {
 		mainMenu.EndGame(distanceTraveled);
 		gameObject.SetActive(false);
-
 	}
 
 	private void Awake () {
@@ -61,7 +52,6 @@ public class Player : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
-    //This method deals with updating the player's position in the pipe as the game progresses
 	private void Update () {
 		velocity += acceleration * Time.deltaTime;
 		float delta = velocity * Time.deltaTime;
@@ -77,46 +67,33 @@ public class Player : MonoBehaviour {
 
 		pipeSystem.transform.localRotation =
 			Quaternion.Euler(0f, 0f, systemRotation);
-		
+
 		UpdateAvatarRotation();
 
-		GetMouseInput ();
-
-		//add gravity
+        //add gravity
         //rotater.localRotation = Quaternion.Euler(0f, -8.0f, 0f);
 
         hud.SetValues(distanceTraveled, velocity);
 	}
 
-    //This method was used to help have user input with a mouse. (used in test phases and early development)
-	private void GetMouseInput(){
-		if ((Input.GetMouseButton (0)) || (Input.GetMouseButton(1))) {
-			Vector3 mousePos = Input.mousePosition;
-			Debug.Log ("X Co-ordinate:" + mousePos.x);
-			Debug.Log ("Y Co-ordinate:" + mousePos.y);
-		}
-	}
-
-    //This method deals with moving the player sideways in the pipe (left or right). It also holds functionality for letting the player jump.
     private void UpdateAvatarRotation()
     {
         float rotationInput = 0f;
-        if (Application.isMobilePlatform) // If on mobile
+        if (Application.isMobilePlatform)
         {
             if (Input.touchCount == 1)
             {
                 if (Input.GetTouch(0).position.x < Screen.width * 0.5f)
                 {
-                    rotationInput = -1f; // move left if touched on left half of screen
+                    rotationInput = -1f;
                 }
                 else
                 {
-                    rotationInput = 1f; // else move right
+                    rotationInput = 1f;
                 }
             }
         }
-        
-        //if jumping
+
         else if (Input.GetKeyDown(KeyCode.UpArrow)){
             print("I am jumping");
             avatar.Jump();
@@ -202,7 +179,6 @@ public class Player : MonoBehaviour {
           }*/
 
 
-    //This method sets the current pipe relative to the previous pipe so its a smooth tunnel
 	private void SetupCurrentPipe () {
 		deltaToRotation = 360f / (2f * Mathf.PI * currentPipe.CurveRadius);
 		worldRotation += currentPipe.RelativeRotation;

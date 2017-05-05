@@ -1,9 +1,4 @@
-﻿
-/*
-This script holds an abstract class for generating items in the pipe
-*/
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class PipeItemGenerator : MonoBehaviour {
 

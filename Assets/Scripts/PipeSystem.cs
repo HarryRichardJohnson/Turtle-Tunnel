@@ -1,18 +1,15 @@
-﻿/*
-This script holds variables and methods used in creating the whole pipe system, using the Pipe class
-*/
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PipeSystem : MonoBehaviour {
 
-    //Instance variables
 	public Pipe pipePrefab;
-    public int pipeCount;
+
+	public int pipeCount;
+
 	public int emptyPipeCount;
+
 	private Pipe[] pipes;
 
-    //Continually creates new pipes.
 	private void Awake () {
 		pipes = new Pipe[pipeCount];
 		for (int i = 0; i < pipes.Length; i++) {
@@ -21,7 +18,6 @@ public class PipeSystem : MonoBehaviour {
 		}
 	}
 
-    //Sets the first pipe (used so no obstacles spawn in first pipe)
 	public Pipe SetupFirstPipe () {
 		for (int i = 0; i < pipes.Length; i++) {
 			Pipe pipe = pipes[i];
@@ -35,7 +31,6 @@ public class PipeSystem : MonoBehaviour {
 		return pipes[1];
 	}
 
-    //This method sets up every other pipe on from the first pipe.
 	public Pipe SetupNextPipe () {
 		ShiftPipes();
 		AlignNextPipeWithOrigin();
@@ -45,7 +40,6 @@ public class PipeSystem : MonoBehaviour {
 		return pipes[1];
 	}
 
-    //This method shifts the pipes in the array as new pipes are created
 	private void ShiftPipes () {
 		Pipe temp = pipes[0];
 		for (int i = 1; i < pipes.Length; i++) {
@@ -54,7 +48,6 @@ public class PipeSystem : MonoBehaviour {
 		pipes[pipes.Length - 1] = temp;
 	}
 
-    //This method ensures each pipe is generated at the right place, relative to the origin.
 	private void AlignNextPipeWithOrigin () {
 		Transform transformToAlign = pipes[1].transform;
 		for (int i = 0; i < pipes.Length; i++) {

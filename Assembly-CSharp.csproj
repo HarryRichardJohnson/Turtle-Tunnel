@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{30F83CFC-2634-985B-653B-80286E709A68}</ProjectGuid>
+    <ProjectGuid>{146BE81A-A203-16BC-4436-F0041FA6267E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Avatar.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\CoinBehaviour.cs" />
+     <Compile Include="Assets\Scripts\GameTest.cs" />
      <Compile Include="Assets\Scripts\HUD.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
@@ -139,15 +140,6 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
- </Reference>
- <Reference Include="NSubstitute 1">
- <HintPath>/Users/user/Turtle Tunnel/Turtle-Tunnel/Turtle-Tunnel/Assets/NSubstitute 1.dll</HintPath>
- </Reference>
- <Reference Include="NSubstitute 2">
- <HintPath>/Users/user/Turtle Tunnel/Turtle-Tunnel/Turtle-Tunnel/Assets/NSubstitute 2.dll</HintPath>
- </Reference>
- <Reference Include="NSubstitute">
- <HintPath>/Users/user/Turtle Tunnel/Turtle-Tunnel/Turtle-Tunnel/Assets/NSubstitute.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
