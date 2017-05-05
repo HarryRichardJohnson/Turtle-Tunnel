@@ -1,4 +1,9 @@
-﻿
+﻿/*
+This script simply helped us to test certain functionality of the game. 
+It has a number of tests checking the core functions of the app. 
+*/
+
+
 public class GameTest{
 
 	public MainMenu menu = new MainMenu();

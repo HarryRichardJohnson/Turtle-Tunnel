@@ -1,6 +1,11 @@
-﻿using UnityEngine;
+﻿/*
+This script holds an abstract class for generating items in the pipe
+*/
 
-public abstract class PipeItemGenerator : MonoBehaviour {
+using UnityEngine;
 
-	public abstract void GenerateItems (Pipe pipe);
+public abstract class PipeItemGenerator : MonoBehaviour
+{
+
+    public abstract void GenerateItems(Pipe pipe);
 }

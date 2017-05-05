@@ -1,68 +1,89 @@
-﻿using UnityEngine;
+﻿/*
+This script holds variables and methods used in creating the whole pipe system, using the Pipe class
+*/
 
-public class PipeSystem : MonoBehaviour {
+using UnityEngine;
 
-	public Pipe pipePrefab;
+public class PipeSystem : MonoBehaviour
+{
 
-	public int pipeCount;
+    //Instance variables
+    public Pipe pipePrefab;
+    public int pipeCount;
+    public int emptyPipeCount;
+    private Pipe[] pipes;
 
-	public int emptyPipeCount;
+    //Continually creates new pipes.
+    private void Awake()
+    {
+        pipes = new Pipe[pipeCount];
+        for (int i = 0; i < pipes.Length; i++)
+        {
+            Pipe pipe = pipes[i] = Instantiate<Pipe>(pipePrefab);
+            pipe.transform.SetParent(transform, false);
+        }
+    }
 
-	private Pipe[] pipes;
+    //Sets the first pipe (used so no obstacles spawn in first pipe)
+    public Pipe SetupFirstPipe()
+    {
+        for (int i = 0; i < pipes.Length; i++)
+        {
+            Pipe pipe = pipes[i];
+            pipe.Generate(i > emptyPipeCount);
+            if (i > 0)
+            {
+                pipe.AlignWith(pipes[i - 1]);
+            }
+        }
+        AlignNextPipeWithOrigin();
+        transform.localPosition = new Vector3(0f, -pipes[1].CurveRadius);
+        return pipes[1];
+    }
 
-	private void Awake () {
-		pipes = new Pipe[pipeCount];
-		for (int i = 0; i < pipes.Length; i++) {
-			Pipe pipe = pipes[i] = Instantiate<Pipe>(pipePrefab);
-			pipe.transform.SetParent(transform, false);
-		}
-	}
+    //This method sets up every other pipe on from the first pipe.
+    public Pipe SetupNextPipe()
+    {
+        ShiftPipes();
+        AlignNextPipeWithOrigin();
+        pipes[pipes.Length - 1].Generate();
+        pipes[pipes.Length - 1].AlignWith(pipes[pipes.Length - 2]);
+        transform.localPosition = new Vector3(0f, -pipes[1].CurveRadius);
+        return pipes[1];
+    }
 
-	public Pipe SetupFirstPipe () {
-		for (int i = 0; i < pipes.Length; i++) {
-			Pipe pipe = pipes[i];
-			pipe.Generate(i > emptyPipeCount);
-			if (i > 0) {
-				pipe.AlignWith(pipes[i - 1]);
-			}
-		}
-		AlignNextPipeWithOrigin();
-		transform.localPosition = new Vector3(0f, -pipes[1].CurveRadius);
-		return pipes[1];
-	}
+    //This method shifts the pipes in the array as new pipes are created
+    private void ShiftPipes()
+    {
+        Pipe temp = pipes[0];
+        for (int i = 1; i < pipes.Length; i++)
+        {
+            pipes[i - 1] = pipes[i];
+        }
+        pipes[pipes.Length - 1] = temp;
+    }
 
-	public Pipe SetupNextPipe () {
-		ShiftPipes();
-		AlignNextPipeWithOrigin();
-		pipes[pipes.Length - 1].Generate();
-		pipes[pipes.Length - 1].AlignWith(pipes[pipes.Length - 2]);
-		transform.localPosition = new Vector3(0f, -pipes[1].CurveRadius);
-		return pipes[1];
-	}
+    //This method ensures each pipe is generated at the right place, relative to the origin.
+    private void AlignNextPipeWithOrigin()
+    {
+        Transform transformToAlign = pipes[1].transform;
+        for (int i = 0; i < pipes.Length; i++)
+        {
+            if (i != 1)
+            {
+                pipes[i].transform.SetParent(transformToAlign);
+            }
+        }
 
-	private void ShiftPipes () {
-		Pipe temp = pipes[0];
-		for (int i = 1; i < pipes.Length; i++) {
-			pipes[i - 1] = pipes[i];
-		}
-		pipes[pipes.Length - 1] = temp;
-	}
+        transformToAlign.localPosition = Vector3.zero;
+        transformToAlign.localRotation = Quaternion.identity;
 
-	private void AlignNextPipeWithOrigin () {
-		Transform transformToAlign = pipes[1].transform;
-		for (int i = 0; i < pipes.Length; i++) {
-			if (i != 1) {
-				pipes[i].transform.SetParent(transformToAlign);
-			}
-		}
-		
-		transformToAlign.localPosition = Vector3.zero;
-		transformToAlign.localRotation = Quaternion.identity;
-		
-		for (int i = 0; i < pipes.Length; i++) {
-			if (i != 1) {
-				pipes[i].transform.SetParent(transform);
-			}
-		}
-	}
+        for (int i = 0; i < pipes.Length; i++)
+        {
+            if (i != 1)
+            {
+                pipes[i].transform.SetParent(transform);
+            }
+        }
+    }
 }

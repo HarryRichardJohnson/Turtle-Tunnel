@@ -1,7 +1,14 @@
-﻿using UnityEngine;
+﻿/*
+This script holds instance variables and methods used to create the pipe in game
+It uses a complex algoritm where vectors are allocated to create each segment of the pipe
+*/
+
+
+using UnityEngine;
 
 public class Pipe : MonoBehaviour {
 
+    //Instance variables
 	public float pipeRadius;
 	public int pipeSegmentCount;
 
@@ -23,25 +30,29 @@ public class Pipe : MonoBehaviour {
 	private float curveAngle;
 	private float relativeRotation;
 
+    //Gets the curve angle of the pipe
 	public float CurveAngle {
 		get {
 			return curveAngle;
 		}
 	}
 
+    //Gets the curve radius of the pipe
 	public float CurveRadius {
 		get {
 			return curveRadius;
 		}
 	}
 
-	public float RelativeRotation {
+    //Gets the relative rotation of the turtle in the pipe
+    public float RelativeRotation {
 		get {
 			return relativeRotation;
 		}
 	}
 
-	public int CurveSegmentCount {
+    //Gets which segment of the pipe the game is currently up to
+    public int CurveSegmentCount {
 		get {
 			return curveSegmentCount;
 		}
@@ -52,7 +63,9 @@ public class Pipe : MonoBehaviour {
 		mesh.name = "Pipe";
 	}
 
-	public void Generate (bool withItems = true) {
+    //This method generates the pipe using a random range between two set values for the radius
+    // as well as random range for the amount of segments.
+    public void Generate (bool withItems = true) {
 		curveRadius = Random.Range(minCurveRadius, maxCurveRadius);
 		curveSegmentCount =
 			Random.Range(minCurveSegmentCount, maxCurveSegmentCount + 1);
@@ -70,7 +83,8 @@ public class Pipe : MonoBehaviour {
 		}
 	}
 
-	private void SetVertices () {
+    //Sets the vertices for a pipe segment
+    private void SetVertices () {
 		vertices = new Vector3[pipeSegmentCount * curveSegmentCount * 4];
 
 		float uStep = ringDistance / curveRadius;
@@ -83,7 +97,8 @@ public class Pipe : MonoBehaviour {
 		mesh.vertices = vertices;
 	}
 
-	private void CreateFirstQuadRing (float u) {
+    //Creates the first segment of the pipe. Used so that the first segment is seperated from the other segments
+    private void CreateFirstQuadRing (float u) {
 		float vStep = (2f * Mathf.PI) / pipeSegmentCount;
 
 		Vector3 vertexA = GetPointOnTorus(0f, 0f);
@@ -96,7 +111,8 @@ public class Pipe : MonoBehaviour {
 		}
 	}
 
-	private void CreateQuadRing (float u, int i) {
+    //Creates every other segment of the pipe
+    private void CreateQuadRing (float u, int i) {
 		float vStep = (2f * Mathf.PI) / pipeSegmentCount;
 		int ringOffset = pipeSegmentCount * 4;
 
@@ -135,6 +151,7 @@ public class Pipe : MonoBehaviour {
 
 	}
 
+    //Gets a point on the pipe
 	private Vector3 GetPointOnTorus (float u, float v) {
 		Vector3 p;
 		float r = (curveRadius + pipeRadius * Mathf.Cos(v));
@@ -144,7 +161,8 @@ public class Pipe : MonoBehaviour {
 		return p;
 	}
 
-	public void AlignWith (Pipe pipe) {
+    //This method aligns the user with the pipe as the pipe rotates and twists so the turtle is relative to the pipe.
+    public void AlignWith (Pipe pipe) {
 		relativeRotation =
 			Random.Range(0, curveSegmentCount) * 360f / pipeSegmentCount;
 

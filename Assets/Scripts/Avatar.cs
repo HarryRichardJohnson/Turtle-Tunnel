@@ -1,7 +1,13 @@
-﻿using UnityEngine;
+﻿/*
+This script holds instance variables and methods used for the actual player character.
+It deals with the hit detection and collision with items/obstacles as well as the shape.
+*/
+
+using UnityEngine;
 
 public class Avatar : MonoBehaviour {
 
+    //Instance variables
 	public ParticleSystem shape, trail, burst;
     public MainMenu mainMenu;
 
@@ -16,6 +22,7 @@ public class Avatar : MonoBehaviour {
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
+    //Initialises the shape of the avatar
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,13 +33,16 @@ public class Avatar : MonoBehaviour {
 		player = transform.root.GetComponent<Player>();
 	}
 
-	private void OnTriggerEnter (Collider collider) {
-        if (collider.gameObject.CompareTag("Coin"))
+    /*This method deals with collision detection if the player collides with an obstacle or coin.
+    It also stops the trail when collision with an obstacle as well as emits a burst or particles as the player loses
+    */
+    private void OnTriggerEnter (Collider collider) {
+        if (collider.gameObject.CompareTag("Coin")) // if collides with coin
         {
             mainMenu.UpdateCoinScore(coinScore);
             Destroy(collider.gameObject);
         }else
-		if (!collider.gameObject.CompareTag("Coin") && deathCountdown < 0f) {
+		if (!collider.gameObject.CompareTag("Coin") && deathCountdown < 0f) { // if collids with any obstacle
 			shape.enableEmission = false;
 			trail.enableEmission = false;
 			burst.Emit(burst.maxParticles);
@@ -43,6 +53,7 @@ public class Avatar : MonoBehaviour {
 		}
 	}
 
+    //This method holds functionality for making the user jump
     public void Jump()
     {
       	if(onGround){
@@ -55,13 +66,15 @@ public class Avatar : MonoBehaviour {
 		
     }
 
+    //This method checks if the player is not currently in mid jump. 
 	void OnCollisionEnter(Collision other){
 		if(other.gameObject.CompareTag("Pipe")){
 			onGround = true;
 		}
 	}
 
-        private void Update () {
+    //This method deals with updating the player as the game is played. 
+    private void Update () {
        
 		if (deathCountdown >= 0f) {
 			deathCountdown -= Time.deltaTime;
