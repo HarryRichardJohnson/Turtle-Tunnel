@@ -41,7 +41,8 @@ public class MainMenu : MonoBehaviour
     public void EndGame(float distanceTraveled)
     {
         scoreLabel.text = "Total score: " + ((int)(distanceTraveled * 10f)).ToString();
-        coinLabel.text = "Coins: " + score.ToString();
+		Player.coinTotal += score;
+		coinLabel.text = "Coins: " + Player.coinTotal.ToString();
         gameObject.SetActive(true);
         Cursor.visible = true;
     }
