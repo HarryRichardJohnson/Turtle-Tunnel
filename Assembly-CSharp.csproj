@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Avatar.cs" />
+     <Compile Include="Assets\Scripts\BuyColour.cs" />
      <Compile Include="Assets\Scripts\BuySkin.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\CoinBehaviour.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\SpiralPlacer.cs" />
+     <Compile Include="Assets\Scripts\TurtleCostIndex.cs" />
      <Compile Include="Assets\Scripts\coinSpin.cs" />
      <Compile Include="Assets\Scripts\equipSkin.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
