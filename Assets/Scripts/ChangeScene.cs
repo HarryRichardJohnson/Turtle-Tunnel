@@ -13,5 +13,9 @@ public class ChangeScene : MonoBehaviour
     {
         //Application.LoadLevel (sceneName);
         SceneManager.LoadScene(sceneName);
+		if (sceneName == "Shop") {
+			//CoinLabel.text = "Coins: " + Player.coinTotal.ToString();
+		}
     }
+
 }

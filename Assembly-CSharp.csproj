@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Avatar.cs" />
+     <Compile Include="Assets\Scripts\BuySkin.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\CoinBehaviour.cs" />
      <Compile Include="Assets\Scripts\GameTest.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Scripts\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\SpiralPlacer.cs" />
      <Compile Include="Assets\Scripts\coinSpin.cs" />
+     <Compile Include="Assets\Scripts\equipSkin.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />
@@ -105,7 +107,6 @@
      <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\TestRunnerCallbackList.cs" />
      <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\TestRunnerConfigurator.cs" />
      <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestingAssets\CallTesting.cs" />
-     <Compile Include="Assets\UpdateCoins.cs" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Cursor.shader" />
      <None Include="Assets\UnityTestTools\LICENSE.txt" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleAdditiveBlend.shader" />
