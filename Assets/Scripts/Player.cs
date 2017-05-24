@@ -30,6 +30,7 @@ public class Player : MonoBehaviour {
 	public float avatarRotation;
     public Avatar avatar;
 	public static int coinTotal;
+	public bool isAccel = false;
 
     private Vector2 touchOrigin = -Vector2.one;
 
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour {
 		SetupCurrentPipe();
 		gameObject.SetActive(true);
 		hud.SetValues(distanceTraveled, velocity);
+		hud.pauseCanvas.gameObject.SetActive (false);
 	}
 
     //This method turns the player inactive when the game has ended. It also switches the screen to the end screen
@@ -78,7 +80,12 @@ public class Player : MonoBehaviour {
 		pipeSystem.transform.localRotation =
 			Quaternion.Euler(0f, 0f, systemRotation);
 
-		UpdateAvatarRotation();
+		if (isAccel == false) {
+			UpdateAvatarRotationTouch ();
+		} else {
+			UpdateAvatarRotationAccel ();
+		}
+
 
         //add gravity
         //rotater.localRotation = Quaternion.Euler(0f, -8.0f, 0f);
@@ -87,9 +94,10 @@ public class Player : MonoBehaviour {
 	}
 
     //This method deals with moving the player sideways in the pipe (left or right). It also holds functionality for letting the player jump.
-    private void UpdateAvatarRotation()
+    public void UpdateAvatarRotationTouch()
     {
         float rotationInput = 0f;
+		isAccel = false;
         if (Application.isMobilePlatform) // If on mobile
         {
             if (Input.touchCount == 1)
@@ -128,7 +136,35 @@ public class Player : MonoBehaviour {
     }
 
 
+	public void UpdateAvatarRotationAccel(){
 
+		var temp = Input.acceleration.x;
+		float rotationInput = 0f;
+		isAccel = true;
+
+		if (temp > 0 && temp < 0.15) {
+			rotationInput = 0f;
+		} else if (temp < 0 && temp > -0.15) {
+			rotationInput = 0f;
+		} else if (temp > 0.15) {
+			rotationInput = 1f;
+		} else if (temp < -0.15) {
+			rotationInput = -1f;
+		}
+
+
+		avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
+		if (avatarRotation < 0f)
+		{
+			avatarRotation += 360f;
+		}
+		else if (avatarRotation >= 360f)
+		{
+			avatarRotation -= 360f;
+		}
+
+		rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
+	}
 
     /* float rotationInput = 0f;
 
