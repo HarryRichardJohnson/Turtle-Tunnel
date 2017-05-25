@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class BuyColour : MonoBehaviour {
 
+	private int turtleIndex;
+
 	// Use this for initialization
 	private void Awake () {
-		SaveLoad coinTotal = GameObject.GetObject<SaveLoad>();
-		int playerCoinTotal = coinTotal.load();
-		TurtleCostIndex index = GameObject.GetObject<TurtleCostIndex>();
-		int colourIndex = index.GetSpriteColour();
+
+		turtleIndex = 0;
+		int playerCoin = SaveLoad.load ();
 	}
 
-	// Update is called once per frame
-	void Update () {
-		if()
+	public void getRightButtonIndex()
+	{
+		turtleIndex++;
+	}
+
+	public void getLeftButtonIndex()
+	{
+		turtleIndex--;
+	}
+
+	public int getTurtleIndex()
+	{
+		return turtleIndex;
 	}
 }

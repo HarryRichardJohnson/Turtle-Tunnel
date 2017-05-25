@@ -1,17 +1,18 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChangeScene.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\turtleColour.cs">
     <Files>
-      <File FileName="Assets/Scripts/BuySkin.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/equipSkin.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Rotator.cs" Line="13" Column="1" NotebookId="1" />
-      <File FileName="Assets/Scripts/MainMenu.cs" Line="23" Column="38" NotebookId="1" />
-      <File FileName="Assets/Scripts/SaveLoad.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Scripts/Player.cs" Line="52" Column="2" NotebookId="1" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="36" Column="3" NotebookId="1" />
-      <File FileName="Assets/Scripts/ChangeScene.cs" Line="21" Column="2" NotebookId="1" />
-      <File FileName="Assets/Scripts/CoinBehaviour.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Scripts/Pipe.cs" Line="4" Column="3" NotebookId="1" />
+      <File FileName="Assets\Scripts\BuyColour.cs" Line="26" Column="9" />
+      <File FileName="Assets\turtleColour.cs" Line="7" Column="34" />
+      <File FileName="Assets\Scripts\buttonRight.cs" Line="9" Column="1" />
+      <File FileName="Assets\Scripts\Rotator.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\MainMenu.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\SaveLoad.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\LevelManager.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\ChangeScene.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\CoinBehaviour.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\Pipe.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
