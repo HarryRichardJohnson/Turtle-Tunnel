@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{146BE81A-A203-16BC-4436-F0041FA6267E}</ProjectGuid>
+    <ProjectGuid>{30F83CFC-2634-985B-653B-80286E709A68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Avatar.cs" />
+     <Compile Include="Assets\Scripts\BuyColour.cs" />
+     <Compile Include="Assets\Scripts\BuySkin.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\CoinBehaviour.cs" />
      <Compile Include="Assets\Scripts\GameTest.cs" />
@@ -59,8 +61,12 @@
      <Compile Include="Assets\Scripts\PipeSystem.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\RandomPlacer.cs" />
+     <Compile Include="Assets\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Scripts\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\SpiralPlacer.cs" />
+     <Compile Include="Assets\Scripts\TurtleCostIndex.cs" />
      <Compile Include="Assets\Scripts\coinSpin.cs" />
+     <Compile Include="Assets\Scripts\equipSkin.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />

@@ -19,7 +19,10 @@ public class MainMenu : MonoBehaviour
     //While awake, has an estimated frame rate of 1000
     private void Awake()
     {
-        Application.targetFrameRate = 1000;
+		Application.targetFrameRate = 1000;
+		Player.coinTotal = SaveLoad.load();
+		coinLabel.text = "Coins: " + Player.coinTotal.ToString();
+	
     }
 
     //When start game is pressed
@@ -42,8 +45,13 @@ public class MainMenu : MonoBehaviour
     {
         scoreLabel.text = "Total score: " + ((int)(distanceTraveled * 10f)).ToString();
 		Player.coinTotal += score;
-		coinLabel.text = "Coins: " + Player.coinTotal.ToString();
+		UpdateCoin ();
+		SaveLoad.save ();
         gameObject.SetActive(true);
         Cursor.visible = true;
     }
+	public void UpdateCoin()
+	{
+		coinLabel.text = "Coins: " + Player.coinTotal.ToString();
+	}
 }

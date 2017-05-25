@@ -30,6 +30,7 @@ public class Player : MonoBehaviour {
 	public float avatarRotation;
     public Avatar avatar;
 	public static int coinTotal;
+	public static int currentSkin;
 
     private Vector2 touchOrigin = -Vector2.one;
 
