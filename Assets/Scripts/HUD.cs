@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour {
     public Text distanceLabel, velocityLabel;
 	public GameObject pauseCanvas,settingsCanvas;
 
+
     //This method sets the in game text labels for the distance traveled, and the current velocity.
     public void SetValues (float distanceTraveled, float velocity) {
 		distanceLabel.text = ((int)(distanceTraveled * 10f)).ToString();

@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 {
 
     //Instance variables
-    public Player player;
+	public Player player = new Player();
     public Text scoreLabel;
     public Text coinLabel;
     private int score;

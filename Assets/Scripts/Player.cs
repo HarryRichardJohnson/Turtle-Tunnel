@@ -49,8 +49,8 @@ public class Player : MonoBehaviour {
 		SetupCurrentPipe();
 		gameObject.SetActive(true);
 		hud.SetValues(distanceTraveled, velocity);
-		hud.pauseCanvas.gameObject.SetActive (false);
-		hud.settingsCanvas.gameObject.SetActive (false);
+	//	hud.pauseCanvas.gameObject.SetActive (false);
+	//	hud.settingsCanvas.gameObject.SetActive (false);
 	}
 
     //This method turns the player inactive when the game has ended. It also switches the screen to the end screen
