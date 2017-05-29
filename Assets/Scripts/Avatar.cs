@@ -16,22 +16,35 @@ public class Avatar : MonoBehaviour {
 
 	private bool onGround;
 
-    public int coinScore = 1;
+    public static int coinScore = 1;
 
     public float deathCountdown = -1f;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
+
+    public AudioSource[] AudioSources;
+
+    public AudioSource collisionAudioSource;
+    public AudioSource coinAudioSource;
+    public AudioSource jumpAudioSource;
 
     //Initialises the shape of the avatar
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 		onGround = true;
+
+        AudioSources = this.GetComponents<AudioSource>();
+
+        coinAudioSource = AudioSources[0];
+        collisionAudioSource = AudioSources[1];
+        jumpAudioSource = AudioSources[2];
     }
 
     private void Awake () {
 		player = transform.root.GetComponent<Player>();
-	}
+    }
+
 
     /*This method deals with collision detection if the player collides with an obstacle or coin.
     It also stops the trail when collision with an obstacle as well as emits a burst or particles as the player loses
@@ -39,16 +52,24 @@ public class Avatar : MonoBehaviour {
     private void OnTriggerEnter (Collider collider) {
         if (collider.gameObject.CompareTag("Coin")) // if collides with coin
         {
+			if (PlayerSound.isSoundOn) {
+				coinAudioSource.Play ();
+			}
             mainMenu.UpdateCoinScore(coinScore);
             Destroy(collider.gameObject);
-        }else
-		if (!collider.gameObject.CompareTag("Coin") && deathCountdown < 0f) { // if collids with any obstacle
-			shape.enableEmission = false;
+        }
+        else
+		if (!collider.gameObject.CompareTag("Coin") && deathCountdown < 0f) { // if collides with any obstacle
+			if (PlayerSound.isSoundOn) {
+				collisionAudioSource.Play ();
+			}
+            shape.enableEmission = false;
 			trail.enableEmission = false;
-			burst.Emit(burst.maxParticles);
+            burst.Emit(burst.maxParticles);
 			deathCountdown = burst.startLifetime;
             player.velocity = 0.0f;
-		}else{
+        }
+        else{
 			onGround = true;
 		}
 	}
@@ -60,6 +81,9 @@ public class Avatar : MonoBehaviour {
 			rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier -1) * Time.deltaTime;
       	}
         print("did I jump?");
+		if (PlayerSound.isSoundOn) {
+			jumpAudioSource.Play ();
+		}
 		transform.position += Vector3.up * Time.deltaTime;
         Debug.Log ("In the air");
 

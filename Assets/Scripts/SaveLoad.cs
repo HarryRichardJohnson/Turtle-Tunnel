@@ -4,6 +4,7 @@ using System.Collections;
 
 public class SaveLoad : MonoBehaviour
 {
+
 	public static void save() 
 	{
 		PlayerPrefs.SetInt("Score", Player.coinTotal);
