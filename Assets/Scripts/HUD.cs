@@ -30,6 +30,7 @@ public class HUD : MonoBehaviour {
 	}
 
 	public void ChangeToMainMenu(){
+		Time.timeScale = 1;
 		ChangeScene ch = new ChangeScene ();
 		ch.changeScene ("Start Menu");
 	}
