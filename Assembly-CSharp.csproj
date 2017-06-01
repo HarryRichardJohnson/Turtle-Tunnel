@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\CoinBehaviour.cs" />
      <Compile Include="Assets\Scripts\GameTest.cs" />
      <Compile Include="Assets\Scripts\HUD.cs" />
+     <Compile Include="Assets\Scripts\HighScore.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Pipe.cs" />

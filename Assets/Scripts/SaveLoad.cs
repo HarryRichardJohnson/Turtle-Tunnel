@@ -5,9 +5,9 @@ using System.Collections;
 public class SaveLoad : MonoBehaviour
 {
 
-	public static void save(string pref) 
+	public static void save(string pref, int number) 
 	{
-		PlayerPrefs.SetInt(pref, Player.coinTotal);
+		PlayerPrefs.SetInt(pref, number);
 	}
 	public static int load(string pref) 
 	{
