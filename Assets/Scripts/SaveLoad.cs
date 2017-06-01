@@ -5,12 +5,12 @@ using System.Collections;
 public class SaveLoad : MonoBehaviour
 {
 
-	public static void save() 
+	public static void save(string pref) 
 	{
-		PlayerPrefs.SetInt("Score", Player.coinTotal);
+		PlayerPrefs.SetInt(pref, Player.coinTotal);
 	}
-	public static int load() 
+	public static int load(string pref) 
 	{
-		return PlayerPrefs.GetInt("Score");
+		return PlayerPrefs.GetInt(pref);
 	}
 }

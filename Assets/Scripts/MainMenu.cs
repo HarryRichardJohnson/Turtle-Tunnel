@@ -26,6 +26,8 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = 1000;
+		Player.coinTotal = SaveLoad.load("Score");
+		coinLabel.text = "Coins: " + Player.coinTotal.ToString();
         backgroundSoundObject = GameObject.Find("BackgroundSong");
         backgroundAudioSource = backgroundSoundObject.GetComponent<AudioSource>();
 
@@ -61,9 +63,11 @@ public class MainMenu : MonoBehaviour
     {
         backgroundAudioSource.Stop();
         waterAudioSource.Stop();
+		Player.coinTotal += score;
         scoreLabel.text = "Total score: " + ((int)(distanceTraveled * 10f)).ToString();
-        coinLabel.text = "Coins: " + score.ToString();
+		coinLabel.text = "Coins: " + Player.coinTotal.ToString();
         gameObject.SetActive(true);
         Cursor.visible = true;
+		SaveLoad.save ("Score");
     }
 }
