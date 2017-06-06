@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour {
 
     //This method loads the next level. Currently not in use and unimplemented
     public void LoadNextLevel() {
-		//Application.LoadLevel(Application.loadedLevel + 1);
+		Application.LoadLevel(Application.loadedLevel + 1);
 	}
 	
 
