@@ -99,13 +99,13 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="NSubstitute 1">
- <HintPath>/Users/user/Turtle Tunnel/Turtle-Tunnel/Turtle-Tunnel/Assets/NSubstitute 1.dll</HintPath>
+ <HintPath>/Users/caseyglover/GitHub/Turtle-Tunnel/Assets/NSubstitute 1.dll</HintPath>
  </Reference>
  <Reference Include="NSubstitute 2">
- <HintPath>/Users/user/Turtle Tunnel/Turtle-Tunnel/Turtle-Tunnel/Assets/NSubstitute 2.dll</HintPath>
+ <HintPath>/Users/caseyglover/GitHub/Turtle-Tunnel/Assets/NSubstitute 2.dll</HintPath>
  </Reference>
  <Reference Include="NSubstitute">
- <HintPath>/Users/user/Turtle Tunnel/Turtle-Tunnel/Turtle-Tunnel/Assets/NSubstitute.dll</HintPath>
+ <HintPath>/Users/caseyglover/GitHub/Turtle-Tunnel/Assets/NSubstitute.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -28,11 +28,15 @@ public class Avatar : MonoBehaviour {
     public AudioSource coinAudioSource;
     public AudioSource jumpAudioSource;
 
+	private Animator anim;
+
+
     //Initialises the shape of the avatar
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 		onGround = true;
+		anim = GetComponent<Animator>();
 
         AudioSources = this.GetComponents<AudioSource>();
 
@@ -43,6 +47,8 @@ public class Avatar : MonoBehaviour {
 
     private void Awake () {
 		player = transform.root.GetComponent<Player>();
+
+
     }
 
 
@@ -77,25 +83,20 @@ public class Avatar : MonoBehaviour {
     //This method holds functionality for making the user jump
     public void Jump()
     {
-      	if(onGround){
-			rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier -1) * Time.deltaTime;
-      	}
-        print("did I jump?");
+    	if(anim) {
+    		anim.SetTrigger("JumpTrigger");
+    	}
+    	
 		if (PlayerSound.isSoundOn) {
 			jumpAudioSource.Play ();
 		}
-		transform.position += Vector3.up * Time.deltaTime;
-        Debug.Log ("In the air");
 
+		print("Did i jump");
 		
     }
 
-    //This method checks if the player is not currently in mid jump. 
-	void OnCollisionEnter(Collision other){
-		if(other.gameObject.CompareTag("Pipe")){
-			onGround = true;
-		}
-	}
+ 
+
 
     //This method deals with updating the player as the game is played. 
     private void Update () {
