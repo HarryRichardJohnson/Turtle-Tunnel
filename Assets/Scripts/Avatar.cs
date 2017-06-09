@@ -61,6 +61,7 @@ public class Avatar : MonoBehaviour {
 			if (PlayerSound.isSoundOn) {
 				coinAudioSource.Play ();
 			}
+			 
             mainMenu.UpdateCoinScore(coinScore);
             Destroy(collider.gameObject);
         }
@@ -90,8 +91,6 @@ public class Avatar : MonoBehaviour {
 		if (PlayerSound.isSoundOn) {
 			jumpAudioSource.Play ();
 		}
-
-		print("Did i jump");
 		
     }
 

@@ -94,20 +94,25 @@ public class Player : MonoBehaviour {
         {
             if (Input.touchCount == 1)
             {
-                if (Input.GetTouch(0).position.x < Screen.width * 0.5f)
+                if (Input.GetTouch(0).position.x < Screen.width * 0.4f)
                 {
                     rotationInput = -1f; // Move left if touched on left half of screen
                 }
-                else
+                else if (Input.GetTouch(0).position.x > Screen.width * 0.6f)
                 {
                     rotationInput = 1f; // else move right
                 }
-            }
+                else
+                {
+                	avatar.Jump();
+                }
+            } 
+
         }
 
         //if jumping
         else if (Input.GetKeyDown(KeyCode.UpArrow)){
-            print("I am jumping");
+            
             avatar.Jump();
         }
         else
