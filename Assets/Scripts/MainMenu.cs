@@ -26,7 +26,6 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = 1000;
-		Player.coinTotal = SaveLoad.load("Score");
 		coinLabel.text = "Coins: " + Player.coinTotal.ToString();
         backgroundSoundObject = GameObject.Find("BackgroundSong");
         backgroundAudioSource = backgroundSoundObject.GetComponent<AudioSource>();
