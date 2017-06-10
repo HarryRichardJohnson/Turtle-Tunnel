@@ -9,8 +9,61 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+	public Animator playbuttonAnimator, highscoreAnimator, settingsAnimator, instructionsAnimator, titleAnimator;
+	
     public void changeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
+
+	void ExitAnimation()
+	{
+		playbuttonAnimator.Play ("playClick");
+		instructionsAnimator.Play ("instructionsClick");
+		highscoreAnimator.Play ("highscoreClick");
+		settingsAnimator.Play ("settingsClick");
+		titleAnimator.Play ("ttunnelText");
+	}
+
+	public void playButtonPressed(){
+		ExitAnimation ();
+		StartCoroutine(WaitForPlay ());
+	}
+
+	public void highScorePressed(){
+		ExitAnimation ();
+		StartCoroutine(WaitForHighScore ());
+	}
+
+	public void settingsPressed(){
+		ExitAnimation ();
+		StartCoroutine(WaitForSettings ());
+	}
+
+	public void instructionsPressed(){
+		ExitAnimation ();
+		StartCoroutine(WaitForInstructions ());
+	}
+
+	IEnumerator WaitForPlay(){
+		yield return new WaitForSeconds (01f);
+		SceneManager.LoadScene ("Game");
+	}
+
+	IEnumerator WaitForHighScore(){
+		yield return new WaitForSeconds (01f);
+		SceneManager.LoadScene ("HighScore");
+	}
+
+	IEnumerator WaitForInstructions(){
+		yield return new WaitForSeconds (01f);
+		SceneManager.LoadScene ("Instructions");
+	}
+
+	IEnumerator WaitForSettings(){
+		yield return new WaitForSeconds (01f);
+		SceneManager.LoadScene ("SettingsMenu");
+	}
+
+
 }

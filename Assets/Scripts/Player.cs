@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 	public float avatarRotation;
     public Avatar avatar;
 	public static int coinTotal;
+	public bool isAccel = false;
 
     private Vector2 touchOrigin = -Vector2.one;
 
@@ -85,57 +86,94 @@ public class Player : MonoBehaviour
 		pipeSystem.transform.localRotation =
 			Quaternion.Euler(0f, 0f, systemRotation);
 
-		UpdateAvatarRotation();
+		if (isAccel == false) {
+			UpdateAvatarRotationTouch ();
+		} else {
+			UpdateAvatarRotationAccel ();
+		}
 
         hud.SetValues(distanceTraveled, velocity);
 	}
 
 
-	//Player movement and jump functionality
-    private void UpdateAvatarRotation()
-    {
-        float rotationInput = 0f;
-        if (Application.isMobilePlatform) // If on mobile
-        {
-            if (Input.touchCount == 1)
-            {
-                if (Input.GetTouch(0).position.x < Screen.width * 0.4f)
-                {
-                    rotationInput = -1f; // Move left if touched on left half of screen
-                }
-                else if (Input.GetTouch(0).position.x > Screen.width * 0.6f)
-                {
-                    rotationInput = 1f; // else move right
-                }
-                else
-                {
-                	avatar.Jump();
-                }
-            } 
+	//This method deals with moving the player sideways in the pipe (left or right). It also holds functionality for letting the player jump.
+	public void UpdateAvatarRotationTouch()
+	{
+		float rotationInput = 0f;
+		isAccel = false;
+		if (Application.isMobilePlatform) // If on mobile
+		{
+			if (Input.touchCount == 1)
+			{
+				if (Input.GetTouch(0).position.x < Screen.width * 0.5f)
+				{
+					rotationInput = -1f; // Move left if touched on left half of screen
+				}
+				else if (Input.GetTouch(0).position.x > Screen.width * 0.6f)
+				{
+					rotationInput = 1f; // else move right
+				}
+				else
+				{
+					avatar.Jump();
+				}
+			}
+		}
 
-        }
+		//if jumping
+		else if (Input.GetKeyDown(KeyCode.UpArrow)){
+			print("I am jumping");
+			avatar.Jump();
+		}
+		else
+		{
+			rotationInput = Input.GetAxis("Horizontal");
+		}
+		avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
+		if (avatarRotation < 0f)
+		{
+			avatarRotation += 360f;
+		}
+		else if (avatarRotation >= 360f)
+		{
+			avatarRotation -= 360f;
+		}
 
-        //if jumping
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-		{           
-            avatar.Jump();
-        }
-        else
-        {
-            rotationInput = Input.GetAxis("Horizontal");
-        }
-        avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
-        if (avatarRotation < 0f)
-        {
-            avatarRotation += 360f;
-        }
-        else if (avatarRotation >= 360f)
-        {
-            avatarRotation -= 360f;
-        }
+		rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
+	}
 
-        rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
-    }
+
+	public void UpdateAvatarRotationAccel(){
+
+		var temp = Input.acceleration.x;
+		float rotationInput = 0f;
+		isAccel = true;
+
+		if (temp > 0 && temp < 0.15) {
+			rotationInput = 0f;
+		} else if (temp < 0 && temp > -0.15) {
+			rotationInput = 0f;
+		} else if (temp > 0.15) {
+			rotationInput = 1f;
+		} else if (temp < -0.15) {
+			rotationInput = -1f;
+		}
+
+
+		avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
+		if (avatarRotation < 0f)
+		{
+			avatarRotation += 360f;
+		}
+		else if (avatarRotation >= 360f)
+		{
+			avatarRotation -= 360f;
+		}
+
+		rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
+	}
+
+
 
     //Sets the current pipe relative to the previous pipe so its a transition.
     private void SetupCurrentPipe ()
