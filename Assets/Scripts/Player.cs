@@ -159,6 +159,10 @@ public class Player : MonoBehaviour
 			rotationInput = -1f;
 		}
 
+		if (Input.touchCount == 1) 
+		{
+			avatar.Jump ();
+		}
 
 		avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
 		if (avatarRotation < 0f)
