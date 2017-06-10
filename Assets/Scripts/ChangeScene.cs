@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+	//Animator objects for the buttons
 	public Animator playbuttonAnimator, highscoreAnimator, settingsAnimator, instructionsAnimator, titleAnimator;
 	
     public void changeScene(string sceneName)
@@ -16,6 +17,7 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+	//set of animations to play while exiting out of main menu
 	void ExitAnimation()
 	{
 		playbuttonAnimator.Play ("playClick");
@@ -25,42 +27,50 @@ public class ChangeScene : MonoBehaviour
 		titleAnimator.Play ("ttunnelText");
 	}
 
-	public void playButtonPressed(){
+	public void playButtonPressed()
+	{
 		ExitAnimation ();
 		StartCoroutine(WaitForPlay ());
 	}
 
-	public void highScorePressed(){
+	public void highScorePressed()
+	{
 		ExitAnimation ();
 		StartCoroutine(WaitForHighScore ());
 	}
 
-	public void settingsPressed(){
+	public void settingsPressed()
+	{
 		ExitAnimation ();
 		StartCoroutine(WaitForSettings ());
 	}
 
-	public void instructionsPressed(){
+	public void instructionsPressed()
+	{
 		ExitAnimation ();
 		StartCoroutine(WaitForInstructions ());
 	}
 
-	IEnumerator WaitForPlay(){
+	IEnumerator WaitForPlay()
+	{
 		yield return new WaitForSeconds (01f);
 		SceneManager.LoadScene ("Game");
 	}
 
-	IEnumerator WaitForHighScore(){
+	IEnumerator WaitForHighScore()
+	{
 		yield return new WaitForSeconds (01f);
 		SceneManager.LoadScene ("HighScore");
 	}
 
-	IEnumerator WaitForInstructions(){
+	IEnumerator WaitForInstructions()
+	{
 		yield return new WaitForSeconds (01f);
 		SceneManager.LoadScene ("Instructions");
 	}
 
-	IEnumerator WaitForSettings(){
+	IEnumerator WaitForSettings()
+	{
 		yield return new WaitForSeconds (01f);
 		SceneManager.LoadScene ("SettingsMenu");
 	}

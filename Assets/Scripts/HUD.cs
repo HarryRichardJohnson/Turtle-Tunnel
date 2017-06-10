@@ -32,18 +32,21 @@ public class HUD : MonoBehaviour
 		resumeCanvas.gameObject.SetActive (false);	
 	}
 
-	public void ChangeToMainMenu(){
+	public void ChangeToMainMenu()
+	{
 		Time.timeScale = 1;
 		ChangeScene ch = new ChangeScene ();
 		ch.changeScene ("Start Menu");
 	}
 
-	public void ChangetoSettings(){
+	public void ChangetoSettings()
+	{
 		settingsCanvas.gameObject.SetActive (true);
 		resumeCanvas.gameObject.SetActive (false);
 	}
 
-	public void ChangeToResume(){
+	public void ChangeToResume()
+	{
 		settingsCanvas.gameObject.SetActive (false);
 		resumeCanvas.gameObject.SetActive (true);
 	}

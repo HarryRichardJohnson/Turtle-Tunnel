@@ -86,6 +86,11 @@ public class Player : MonoBehaviour
 		pipeSystem.transform.localRotation =
 			Quaternion.Euler(0f, 0f, systemRotation);
 
+		//The value of isAccel is set to false as default which the game initializes the control as touch input.
+		//The button click in settings menu is able to change this value to false or true, depending on the button
+		//pressed. If the accelrometer button was pressed it calls UpdateAvatarRotationAccel(), other wise it calls
+		//UpdateAvatarRotationTouch(), two methods which determine the controls for the game.
+
 		if (isAccel == false) {
 			UpdateAvatarRotationTouch ();
 		} else {
@@ -143,7 +148,8 @@ public class Player : MonoBehaviour
 	}
 
 
-	public void UpdateAvatarRotationAccel(){
+	public void UpdateAvatarRotationAccel()
+	{
 
 		var temp = Input.acceleration.x;
 		float rotationInput = 0f;
