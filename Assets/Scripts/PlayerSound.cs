@@ -3,22 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerSound : MonoBehaviour {
+/**
+ * the player sound script
+ * sound can be on or off 
+ * using the toggle button
+ */ 
+
+public class PlayerSound : MonoBehaviour 
+{
 
     public Toggle myToggle;
-
     public static bool isSoundOn; 
 
+	//initialise on setup
 	void Awake()
 	{
 		DontDestroyOnLoad (myToggle);
 	}
+
+	//	//initialise on start
     public void start()
     {
         isSoundOn = myToggle.isOn;
 
     }
 
+	//Updates every frame
 	void Update()
 	{
 		toggleSound ();
@@ -26,6 +36,7 @@ public class PlayerSound : MonoBehaviour {
 		//PlayerPrefs.GetInt ("SoundOn");	
 	}
 
+	//Sound on functionality
     public void toggleSound()
     {
 			
@@ -43,9 +54,11 @@ public class PlayerSound : MonoBehaviour {
         }
     }
 
+	//load the previous state of the sound on or off
 	void  previousState()
 	{
-		if (PlayerPrefs.GetInt ("SoundOn").Equals (1)) {
+		if (PlayerPrefs.GetInt ("SoundOn").Equals (1)) 
+		{
 			myToggle.isOn = true;
 		} 
 		else 

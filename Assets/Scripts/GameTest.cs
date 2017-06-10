@@ -4,38 +4,50 @@ It has a number of tests checking the core functions of the app.
 */
 
 
-public class GameTest{
+public class GameTest
+{
 
 	public MainMenu menu = new MainMenu();
     private bool gamestate;
 	public CoinBehaviour cb = new CoinBehaviour();
 
-    public void startGame(){
+    public void startGame()
+	{
     	
         menu.StartGame(1);
         gamestate = true;
     }
 
-    public void endGame(){
+
+    public void endGame()
+	{
     	menu.EndGame(100f);
     	gamestate = false;
     }
 
-    public bool speedIncreased(){
+	//test speed increase
+    public bool speedIncreased()
+	{
     	startGame();
-        if(menu.player.acceleration >= 0){
+        if(menu.player.acceleration >= 0)
+		{
             return true;
-        }else{
+        }else
+		{
             return false;
         }
     }
 
-    public bool gameState(){
+	//testing game starts
+    public bool gameState()
+	{
     	startGame();
         return gamestate;
     }
 
-    public bool gameEnd(){
+	//testing game ended
+    public bool gameEnd()
+	{
     	endGame();
         return gamestate;
     }

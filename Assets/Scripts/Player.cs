@@ -7,7 +7,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     //Instance variables
 	public PipeSystem pipeSystem;
@@ -36,7 +37,8 @@ public class Player : MonoBehaviour {
 	private Transform world, rotater;
 
     //This method initialises the player and game values when a new game is started
-    public void StartGame (int accelerationMode) {
+    public void StartGame (int accelerationMode) 
+	{
 		distanceTraveled = 0f;
 		avatarRotation = 0f;
 		systemRotation = 0f;
@@ -49,26 +51,31 @@ public class Player : MonoBehaviour {
 		hud.SetValues(distanceTraveled, velocity);
 	}
 
-    //This method turns the player inactive when the game has ended. It also switches the screen to the end screen
-	public void Die () {
+    //Sets the player as inactive when the game has ended. It also switches the screen to the end screen
+	public void Die () 
+	{
 		mainMenu.EndGame(distanceTraveled);
 		gameObject.SetActive(false);
 	}
 
-	private void Awake () {
+	//initialise on setup
+	private void Awake () 
+	{
 		world = pipeSystem.transform.parent;
 		rotater = transform.GetChild(0);
 		gameObject.SetActive(false);
 	}
 
-    //This method updates the players position in the pipe as the game progresses
-	private void Update () {
+    //updates the player every frame
+	private void Update () 
+	{
 		velocity += acceleration * Time.deltaTime;
 		float delta = velocity * Time.deltaTime;
 		distanceTraveled += delta;
 		systemRotation += delta * deltaToRotation;
 
-		if (systemRotation >= currentPipe.CurveAngle) {
+		if (systemRotation >= currentPipe.CurveAngle) 
+		{
 			delta = (systemRotation - currentPipe.CurveAngle) / deltaToRotation;
 			currentPipe = pipeSystem.SetupNextPipe();
 			SetupCurrentPipe();
@@ -80,13 +87,11 @@ public class Player : MonoBehaviour {
 
 		UpdateAvatarRotation();
 
-        //add gravity
-        //rotater.localRotation = Quaternion.Euler(0f, -8.0f, 0f);
-
         hud.SetValues(distanceTraveled, velocity);
 	}
 
-    //This method deals with moving the player sideways in the pipe (left or right). It also holds functionality for letting the player jump.
+
+	//Player movement and jump functionality
     private void UpdateAvatarRotation()
     {
         float rotationInput = 0f;
@@ -111,8 +116,8 @@ public class Player : MonoBehaviour {
         }
 
         //if jumping
-        else if (Input.GetKeyDown(KeyCode.UpArrow)){
-            
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+		{           
             avatar.Jump();
         }
         else
@@ -132,78 +137,17 @@ public class Player : MonoBehaviour {
         rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
     }
 
-
-
-
-    /* float rotationInput = 0f;
-
-     //mobile input
-     if (Application.isMobilePlatform)
-     {
-
-         //if user has tapped screen
-         if (Input.touchCount == 1)
-         {
-             if (Input.GetTouch(0).position.x < Screen.width * 0.5f)
-             {
-                 rotationInput = -1f;
-             }
-             else
-             {
-                 rotationInput = 1f;
-             }
-         }
-          //if user has swiped
-          else
-          {
-              Touch myTouch = Input.touches[0];
-
-              if (myTouch.phase == TouchPhase.Began)
-              {
-                  touchOrigin = myTouch.position;
-              }
-              else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
-              {
-                  Vector2 touchEnd = myTouch.position;
-                  float x = touchEnd
-              }
-          }
-     }
-
-     //keyboard input
-     else
-     {
-         //if (inputDirection == InputDirection.Left || inputDirection == InputDirection.Right)
-         // {
-
-         rotationInput = Input.GetAxis("Horizontal");
-
-         avatarRotation += rotationVelocity * Time.deltaTime * rotationInput;
-         if (avatarRotation < 0f)
-         {
-             avatarRotation += 360f;
-         }
-         else if (avatarRotation >= 360f)
-         {
-             avatarRotation -= 360f;
-         }
-     }
-         rotater.localRotation = Quaternion.Euler(avatarRotation, 0f, 0f);
-         /* }
-          else if (inputDirection == InputDirection.Top)
-          {
-              rotater.localRotation = Quaternion.Euler(0f, 8.0f, 0f);
-          }*/
-
-
-    //This method sets the current pipe relative to the previous pipe so its a transition.
-    private void SetupCurrentPipe () {
+    //Sets the current pipe relative to the previous pipe so its a transition.
+    private void SetupCurrentPipe ()
+	{
 		deltaToRotation = 360f / (2f * Mathf.PI * currentPipe.CurveRadius);
 		worldRotation += currentPipe.RelativeRotation;
-		if (worldRotation < 0f) {
+		if (worldRotation < 0f) 
+		{
 			worldRotation += 360f;
 		}
-		else if (worldRotation >= 360f) {
+		else if (worldRotation >= 360f)
+		{
 			worldRotation -= 360f;
 		}
 		world.localRotation = Quaternion.Euler(worldRotation, 0f, 0f);

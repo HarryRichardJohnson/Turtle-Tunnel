@@ -2,6 +2,11 @@
 using UnityEngine;
 using System.Collections;
 
+/**
+ * saves and loads the players scores 
+ * using PlayerPrefs, built in functionality of unity
+ */ 
+
 public class SaveLoad : MonoBehaviour
 {
 

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonClicked : MonoBehaviour {
+public class ButtonClicked : MonoBehaviour 
+{
 
-	// Use this for initialization
+	//initialization
 	public Animator animator;
 	public UnityEngine.UI.Button playButton;
 	ChangeScene ch = new ChangeScene();
@@ -15,16 +16,18 @@ public class ButtonClicked : MonoBehaviour {
 		playButton.onClick.AddListener (SetBool);
 	}
 
-		void SetBool(){
+	void SetBool()
+	{
 			SetBoolWait ();
 			//animator.Play ("playClick");
 
-		}
+	}
 
-	IEnumerator SetBoolWait(){
+
+	IEnumerator SetBoolWait()
+	{
 		yield return new WaitForSeconds (5);
 		animator.Play ("playClick");
-		Debug.Log ("LOL");	
 		ch.changeScene ("Game");
 	}
 }

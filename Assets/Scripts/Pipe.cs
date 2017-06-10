@@ -6,7 +6,8 @@ It uses a complex algoritm where vectors are allocated to create each segment of
 
 using UnityEngine;
 
-public class Pipe : MonoBehaviour {
+public class Pipe : MonoBehaviour 
+{
 
     //Instance variables
 	public float pipeRadius;
@@ -31,41 +32,51 @@ public class Pipe : MonoBehaviour {
 	private float relativeRotation;
 
     //Gets the curve angle of the pipe
-	public float CurveAngle {
+	public float CurveAngle 
+	{
 		get {
 			return curveAngle;
 		}
 	}
 
     //Gets the curve radius of the pipe
-	public float CurveRadius {
-		get {
+	public float CurveRadius 
+	{
+		get 
+		{
 			return curveRadius;
 		}
 	}
 
     //Gets the relative rotation of the turtle in the pipe
-    public float RelativeRotation {
-		get {
+    public float RelativeRotation 
+	{
+		get 
+		{
 			return relativeRotation;
 		}
 	}
 
     //Gets which segment of the pipe the game is currently up to
-    public int CurveSegmentCount {
-		get {
+    public int CurveSegmentCount 
+	{
+		get 
+		{
 			return curveSegmentCount;
 		}
 	}
 
-	private void Awake () {
+	//initialise on setup
+	private void Awake () 
+	{
 		GetComponent<MeshFilter>().mesh = mesh = new Mesh();
 		mesh.name = "Pipe";
 	}
 
-    //This method generates the pipe using a random range between two set values for the radius
+    //Generates the pipe using a random range between two set values for the radius
     // as well as random range for the amount of segments.
-    public void Generate (bool withItems = true) {
+    public void Generate (bool withItems = true) 
+	{
 		curveRadius = Random.Range(minCurveRadius, maxCurveRadius);
 		curveSegmentCount =
 			Random.Range(minCurveSegmentCount, maxCurveSegmentCount + 1);
@@ -75,30 +86,35 @@ public class Pipe : MonoBehaviour {
 		SetTriangles();
 		mesh.RecalculateNormals();
 
-		for (int i = 0; i < transform.childCount; i++) {
+		for (int i = 0; i < transform.childCount; i++) 
+		{
 			Destroy(transform.GetChild(i).gameObject);
 		}
-		if (withItems) {
+		if (withItems)
+		{
 			generators[Random.Range(0, generators.Length)].GenerateItems(this);
 		}
 	}
 
     //Sets the vertices for a pipe segment
-    private void SetVertices () {
+    private void SetVertices () 
+	{
 		vertices = new Vector3[pipeSegmentCount * curveSegmentCount * 4];
 
 		float uStep = ringDistance / curveRadius;
 		curveAngle = uStep * curveSegmentCount * (360f / (2f * Mathf.PI));
 		CreateFirstQuadRing(uStep);
 		int iDelta = pipeSegmentCount * 4;
-		for (int u = 2, i = iDelta; u <= curveSegmentCount; u++, i += iDelta) {
+		for (int u = 2, i = iDelta; u <= curveSegmentCount; u++, i += iDelta)
+		{
 			CreateQuadRing(u * uStep, i);
 		}
 		mesh.vertices = vertices;
 	}
 
     //Creates the first segment of the pipe. Used so that the first segment is seperated from the other segments
-    private void CreateFirstQuadRing (float u) {
+    private void CreateFirstQuadRing (float u) 
+	{
 		float vStep = (2f * Mathf.PI) / pipeSegmentCount;
 
 		Vector3 vertexA = GetPointOnTorus(0f, 0f);
@@ -112,7 +128,8 @@ public class Pipe : MonoBehaviour {
 	}
 
     //Creates every other segment of the pipe
-    private void CreateQuadRing (float u, int i) {
+    private void CreateQuadRing (float u, int i) 
+	{
 		float vStep = (2f * Mathf.PI) / pipeSegmentCount;
 		int ringOffset = pipeSegmentCount * 4;
 
@@ -125,7 +142,9 @@ public class Pipe : MonoBehaviour {
 		}
 	}
 
-	private void SetUV () {
+	//Generates a mesh texture
+	private void SetUV () 
+	{
 		uv = new Vector2[vertices.Length];
 		for (int i = 0; i < vertices.Length; i+= 4) {
 			uv[i] = Vector2.zero;
@@ -136,9 +155,12 @@ public class Pipe : MonoBehaviour {
 		mesh.uv = uv;
 	}
 
-	private void SetTriangles () {
+	//Generates a mesh from triangulation
+	private void SetTriangles () 
+	{
 		triangles = new int[pipeSegmentCount * curveSegmentCount * 6];
-		for (int t = 0, i = 0; t < triangles.Length; t += 6, i += 4) {
+		for (int t = 0, i = 0; t < triangles.Length; t += 6, i += 4) 
+		{
 			triangles[t] = i;
 			triangles[t + 1] = triangles[t + 4] = i + 2;
 			triangles[t + 2] = triangles[t + 3] = i + 1;
@@ -147,12 +169,11 @@ public class Pipe : MonoBehaviour {
 		mesh.triangles = triangles;
 		transform.gameObject.AddComponent<MeshCollider>();
 		transform.GetComponent<MeshCollider>().sharedMesh = mesh;
-		//transform.gameObject.AddComponent<MeshFilter>();
-
 	}
 
-    //Gets a point on the pipe
-	private Vector3 GetPointOnTorus (float u, float v) {
+    //Gets a vector on the torus
+	private Vector3 GetPointOnTorus (float u, float v)
+	{
 		Vector3 p;
 		float r = (curveRadius + pipeRadius * Mathf.Cos(v));
 		p.x = r * Mathf.Sin(u);
@@ -161,8 +182,9 @@ public class Pipe : MonoBehaviour {
 		return p;
 	}
 
-    //This method aligns the user with the pipe as the pipe rotates and twists so the turtle is relative to the pipe.
-    public void AlignWith (Pipe pipe) {
+    //Aligns the user with the pipe as the pipe rotates and twists so the turtle is relative to the pipe.
+    public void AlignWith (Pipe pipe) 
+	{
 		relativeRotation =
 			Random.Range(0, curveSegmentCount) * 360f / pipeSegmentCount;
 

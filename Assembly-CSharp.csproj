@@ -64,7 +64,6 @@
      <Compile Include="Assets\Scripts\RandomPlacer.cs" />
      <Compile Include="Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\SaveLoad.cs" />
-     <Compile Include="Assets\Scripts\ShowSkin.cs" />
      <Compile Include="Assets\Scripts\SpiralPlacer.cs" />
      <Compile Include="Assets\Scripts\coinSpin.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />

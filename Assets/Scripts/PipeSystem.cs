@@ -13,7 +13,7 @@ public class PipeSystem : MonoBehaviour
     public int emptyPipeCount;
     private Pipe[] pipes;
 
-    //Continually creates new pipes.
+    //instantialises a pipe on setup
     private void Awake()
     {
         pipes = new Pipe[pipeCount];
@@ -24,7 +24,7 @@ public class PipeSystem : MonoBehaviour
         }
     }
 
-    //Sets the first pipe (used so no obstacles spawn in first pipe)
+    //Sets the first pipe so no obsticles or collectables are available
     public Pipe SetupFirstPipe()
     {
         for (int i = 0; i < pipes.Length; i++)
@@ -41,7 +41,7 @@ public class PipeSystem : MonoBehaviour
         return pipes[1];
     }
 
-    //This method sets up every other pipe on from the first pipe.
+    //Sets up a new pipe from existing pipe.
     public Pipe SetupNextPipe()
     {
         ShiftPipes();
@@ -52,7 +52,7 @@ public class PipeSystem : MonoBehaviour
         return pipes[1];
     }
 
-    //This method shifts the pipes in the array as new pipes are created
+    //Shifts the pipes in the array as new pipes are created
     private void ShiftPipes()
     {
         Pipe temp = pipes[0];
@@ -63,7 +63,7 @@ public class PipeSystem : MonoBehaviour
         pipes[pipes.Length - 1] = temp;
     }
 
-    //This method ensures each pipe is generated at the right place, relative to the origin.
+    //Ensures each pipe is generated at the right place, relative to the origin.
     private void AlignNextPipeWithOrigin()
     {
         Transform transformToAlign = pipes[1].transform;

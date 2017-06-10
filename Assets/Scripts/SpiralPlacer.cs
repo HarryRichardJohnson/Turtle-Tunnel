@@ -11,7 +11,7 @@ public class SpiralPlacer : PipeItemGenerator
     //Instance variables
     public PipeItem[] itemPrefabs;
 
-    //This method overrides the generate Item method. It makes a spiral of obstacles in game
+    //Overrides the generate Item method. It makes a spiral of obstacles in game
     public override void GenerateItems(Pipe pipe)
     {
         float start = (Random.Range(0, pipe.pipeSegmentCount) + 0.5f);

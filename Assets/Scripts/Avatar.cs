@@ -5,7 +5,8 @@ It deals with the hit detection and collision with items/obstacles as well as th
 
 using UnityEngine;
 
-public class Avatar : MonoBehaviour {
+public class Avatar : MonoBehaviour 
+{
 
     //Instance variables
 	public ParticleSystem shape, trail, burst;
@@ -45,7 +46,9 @@ public class Avatar : MonoBehaviour {
         jumpAudioSource = AudioSources[2];
     }
 
-    private void Awake () {
+	//Initialises on start up 
+    private void Awake () 
+	{
 		player = transform.root.GetComponent<Player>();
 
 
@@ -53,12 +56,14 @@ public class Avatar : MonoBehaviour {
 
 
     /*This method deals with collision detection if the player collides with an obstacle or coin.
-    It also stops the trail when collision with an obstacle as well as emits a burst or particles as the player loses
+     * It also stops the trail when collision with an obstacle as well as emits a burst or particles as the player loses
     */
-    private void OnTriggerEnter (Collider collider) {
+    private void OnTriggerEnter (Collider collider) 
+	{
         if (collider.gameObject.CompareTag("Coin")) // if collides with coin
         {
-			if (PlayerSound.isSoundOn) {
+			if (PlayerSound.isSoundOn) 
+			{
 				coinAudioSource.Play ();
 			}
 			 
@@ -66,43 +71,52 @@ public class Avatar : MonoBehaviour {
             Destroy(collider.gameObject);
         }
         else
-		if (!collider.gameObject.CompareTag("Coin") && deathCountdown < 0f) { // if collides with any obstacle
-			if (PlayerSound.isSoundOn) {
-				collisionAudioSource.Play ();
-			}
+		if (!collider.gameObject.CompareTag("Coin") && deathCountdown < 0f) 
+			{ 
+				if (PlayerSound.isSoundOn) // if collides with any obstacle
+				{
+					collisionAudioSource.Play ();
+				}
             shape.enableEmission = false;
 			trail.enableEmission = false;
             burst.Emit(burst.maxParticles);
 			deathCountdown = burst.startLifetime;
             player.velocity = 0.0f;
         }
-        else{
-			onGround = true;
-		}
+        else
+			{
+				onGround = true;
+			}
 	}
 
-    //This method holds functionality for making the user jump
+    /**
+     * functionality of jumping includes 
+     * sound and animation
+     */
     public void Jump()
     {
-    	if(anim) {
+    	if(anim) 
+		{
     		anim.SetTrigger("JumpTrigger");
     	}
     	
-		if (PlayerSound.isSoundOn) {
+		if (PlayerSound.isSoundOn) 
+		{
 			jumpAudioSource.Play ();
 		}
 		
     }
-
- 
-
-
-    //This method deals with updating the player as the game is played. 
+		
+    /**
+     * updates the methods every frame
+     */ 
     private void Update () {
        
-		if (deathCountdown >= 0f) {
+		if (deathCountdown >= 0f) 
+		{
 			deathCountdown -= Time.deltaTime;
-			if (deathCountdown <= 0f) {
+			if (deathCountdown <= 0f)
+			{
 				deathCountdown = -1f;
 				shape.enableEmission = true;
 				trail.enableEmission = true;
