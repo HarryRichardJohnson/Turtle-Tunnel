@@ -57,6 +57,12 @@ public class MainMenu : MonoBehaviour
         score += value;
     }
 
+	//returns the players score
+	public int getScore()
+	{
+		return score;
+	}
+
     //Shows the distance travelled, and the total coins collected when game has ended.
     public void EndGame(float distanceTraveled)
     {

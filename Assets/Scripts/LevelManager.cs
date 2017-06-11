@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
 		{
 	 		Invoke ("LoadNextLevel", autoLoadNextLevelAfter);
 	 	}
-	  }
+	}
 
     //This method loads the current level
     public void LoadLevel(string name)

@@ -50,8 +50,6 @@ public class Avatar : MonoBehaviour
     private void Awake () 
 	{
 		player = transform.root.GetComponent<Player>();
-
-
     }
 
 

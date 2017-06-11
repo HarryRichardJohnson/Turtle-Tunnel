@@ -10,20 +10,16 @@ public class ButtonClicked : MonoBehaviour
 	public UnityEngine.UI.Button playButton;
 	ChangeScene ch = new ChangeScene();
 
-	public void Start(){
-		//playButton = GameObject.Find ("Play").GetComponent<UnityEngine.UI.Button> ();
-
+	public void Start()
+	{
 		playButton.onClick.AddListener (SetBool);
 	}
 
 	void SetBool()
 	{
-			SetBoolWait ();
-			//animator.Play ("playClick");
-
+		SetBoolWait ();
 	}
-
-
+		
 	IEnumerator SetBoolWait()
 	{
 		yield return new WaitForSeconds (5);
