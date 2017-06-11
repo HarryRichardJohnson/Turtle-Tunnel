@@ -6,6 +6,7 @@ with the buttons.
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Assertions;
+using System;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class MainMenu : MonoBehaviour
     public Text scoreLabel;
     public Text coinLabel;
     private int score;
+	public static int [] HighScore = new int[] {0,0,0,0,0,0,0,0,0,0};
 
     public GameObject backgroundSoundObject;
     public AudioSource backgroundAudioSource;
@@ -25,6 +27,7 @@ public class MainMenu : MonoBehaviour
     //While awake, has an estimated frame rate of 1000
     private void Awake()
     {
+		
         Application.targetFrameRate = 1000;
 		coinLabel.text = "Coins: " + Player.coinTotal.ToString();
         backgroundSoundObject = GameObject.Find("BackgroundSong");
@@ -74,91 +77,21 @@ public class MainMenu : MonoBehaviour
         gameObject.SetActive(true);
         Cursor.visible = true;
 		SaveLoad.save ("Score", Player.coinTotal);
-		if(((int)(distanceTraveled * 10f))>SaveLoad.load("HS1"))
-		{
-			SaveLoad.save ("HS10", SaveLoad.load("HS9"));
-			SaveLoad.save ("HS9", SaveLoad.load("HS8"));
-			SaveLoad.save ("HS8", SaveLoad.load("HS7"));
-			SaveLoad.save ("HS7", SaveLoad.load("HS6"));
-			SaveLoad.save ("HS6", SaveLoad.load("HS5"));
-			SaveLoad.save ("HS5", SaveLoad.load("HS4"));
-			SaveLoad.save ("HS4", SaveLoad.load("HS3"));
-			SaveLoad.save ("HS3", SaveLoad.load("HS2"));
-			SaveLoad.save ("HS2", SaveLoad.load("HS1"));
-			SaveLoad.save ("HS1", (int)(distanceTraveled * 10f));
-		}
-		else if(((int)(distanceTraveled * 10f))>SaveLoad.load("HS2"))
-		{
-			SaveLoad.save ("HS10", SaveLoad.load("HS9"));
-			SaveLoad.save ("HS9", SaveLoad.load("HS8"));
-			SaveLoad.save ("HS8", SaveLoad.load("HS7"));
-			SaveLoad.save ("HS7", SaveLoad.load("HS6"));
-			SaveLoad.save ("HS6", SaveLoad.load("HS5"));
-			SaveLoad.save ("HS5", SaveLoad.load("HS4"));
-			SaveLoad.save ("HS4", SaveLoad.load("HS3"));
-			SaveLoad.save ("HS3", SaveLoad.load("HS2"));
-			SaveLoad.save ("HS2", (int)(distanceTraveled * 10f));
-		}
-		else if(((int)(distanceTraveled * 10f))>SaveLoad.load("HS3"))
-		{
-			SaveLoad.save ("HS10", SaveLoad.load("HS9"));
-			SaveLoad.save ("HS9", SaveLoad.load("HS8"));
-			SaveLoad.save ("HS8", SaveLoad.load("HS7"));
-			SaveLoad.save ("HS7", SaveLoad.load("HS6"));
-			SaveLoad.save ("HS6", SaveLoad.load("HS5"));
-			SaveLoad.save ("HS5", SaveLoad.load("HS4"));
-			SaveLoad.save ("HS4", SaveLoad.load("HS3"));
-			SaveLoad.save ("HS3", (int)(distanceTraveled * 10f));
-		}	
-		else if (((int)(distanceTraveled * 10f)) > SaveLoad.load ("HS4")) 
-		{
-			SaveLoad.save ("HS10", SaveLoad.load("HS9"));
-			SaveLoad.save ("HS9", SaveLoad.load("HS8"));
-			SaveLoad.save ("HS8", SaveLoad.load("HS7"));
-			SaveLoad.save ("HS7", SaveLoad.load("HS6"));
-			SaveLoad.save ("HS6", SaveLoad.load("HS5"));
-			SaveLoad.save ("HS5", SaveLoad.load("HS4"));
-			SaveLoad.save ("HS4", (int)(distanceTraveled * 10f));
 
-		}
-		else if(((int)(distanceTraveled * 10f))>SaveLoad.load("HS5"))
-		{
-			SaveLoad.save ("HS10", SaveLoad.load("HS9"));
-			SaveLoad.save ("HS9", SaveLoad.load("HS8"));
-			SaveLoad.save ("HS8", SaveLoad.load("HS7"));
-			SaveLoad.save ("HS7", SaveLoad.load("HS6"));
-			SaveLoad.save ("HS6", SaveLoad.load("HS5"));
-			SaveLoad.save ("HS5", (int)(distanceTraveled * 10f));
-		}
-		else if(((int)(distanceTraveled * 10f))>SaveLoad.load("HS6"))
-		{
-			SaveLoad.save ("HS10", SaveLoad.load("HS9"));
-			SaveLoad.save ("HS9", SaveLoad.load("HS8"));
-			SaveLoad.save ("HS8", SaveLoad.load("HS7"));
-			SaveLoad.save ("HS7", SaveLoad.load("HS6"));
-			SaveLoad.save ("HS6", (int)(distanceTraveled * 10f));
-		}
-		else if(((int)(distanceTraveled * 10f))>SaveLoad.load("HS7"))
-		{
-			SaveLoad.save ("HS10", SaveLoad.load("HS9"));
-			SaveLoad.save ("HS9", SaveLoad.load("HS8"));
-			SaveLoad.save ("HS8", SaveLoad.load("HS7"));
-			SaveLoad.save ("HS7", (int)(distanceTraveled * 10f));
-		}	
-		else if(((int)(distanceTraveled * 10f))>SaveLoad.load("HS8"))
-		{
-			SaveLoad.save ("HS10", SaveLoad.load("HS9"));
-			SaveLoad.save ("HS9", SaveLoad.load("HS8"));
-			SaveLoad.save ("HS8", (int)(distanceTraveled * 10f));
-		}
-		else if(((int)(distanceTraveled * 10f))>SaveLoad.load("HS9"))
-		{
-			SaveLoad.save ("HS10", SaveLoad.load("HS9"));
-			SaveLoad.save ("HS7", (int)(distanceTraveled * 10f));
-		}	
-		else if(((int)(distanceTraveled * 10f))>SaveLoad.load("HS10"))
-		{
-			SaveLoad.save ("HS10", (int)(distanceTraveled * 10f));
+
+		if(((int)(distanceTraveled * 10f))>HighScore[1]){
+			HighScore [1] = (int)(distanceTraveled * 10f);
+			Array.Sort (HighScore);
+			PlayerPrefs.SetInt ("HS1", HighScore[0]);
+			PlayerPrefs.SetInt ("HS2", HighScore[1]);
+			PlayerPrefs.SetInt ("HS3", HighScore[2]);
+			PlayerPrefs.SetInt ("HS4", HighScore[3]);
+			PlayerPrefs.SetInt ("HS5", HighScore[4]);
+			PlayerPrefs.SetInt ("HS6", HighScore[5]);
+			PlayerPrefs.SetInt ("HS7", HighScore[6]);
+			PlayerPrefs.SetInt ("HS8", HighScore[7]);
+			PlayerPrefs.SetInt ("HS9", HighScore[8]);
+			PlayerPrefs.SetInt ("HS10", HighScore[9]);
 		}
 
 	}
