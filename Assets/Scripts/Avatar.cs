@@ -95,7 +95,7 @@ public class Avatar : MonoBehaviour
     {
     	if(anim) 
 		{
-    		anim.SetTrigger("JumpTrigger");
+			anim.SetTrigger("JumpTrigger");
     	}
     	
 		if (PlayerSound.isSoundOn) 

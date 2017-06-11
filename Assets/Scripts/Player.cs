@@ -127,7 +127,6 @@ public class Player : MonoBehaviour
 
 		//if jumping
 		else if (Input.GetKeyDown(KeyCode.UpArrow)){
-			print("I am jumping");
 			avatar.Jump();
 		}
 		else
