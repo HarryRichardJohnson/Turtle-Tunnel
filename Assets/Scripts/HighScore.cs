@@ -27,7 +27,7 @@ public class HighScore : MonoBehaviour
 		MainMenu.HighScore[9] = PlayerPrefs.GetInt("HS10");
 		Array.Sort (MainMenu.HighScore);
 
-		HighScoreLabel.text = "  1: " + MainMenu.HighScore[9]+"\n 2: " + MainMenu.HighScore[8]+"\n 3: " + MainMenu.HighScore[7]+
+		HighScoreLabel.text = " 1: " + MainMenu.HighScore[9]+"\n 2: " + MainMenu.HighScore[8]+"\n 3: " + MainMenu.HighScore[7]+
 			 "\n 4: " + MainMenu.HighScore[6]+"\n 5: " + MainMenu.HighScore[5]+"\n 6: " + MainMenu.HighScore[4]+
 			"\n 7: " + MainMenu.HighScore[3]+"\n 8: " + MainMenu.HighScore[2]+"\n 9: " + MainMenu.HighScore[1]+"\n10: " + MainMenu.HighScore[0];
 
