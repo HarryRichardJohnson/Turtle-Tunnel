@@ -13,13 +13,7 @@ public class HighScore : MonoBehaviour
 {
 	 
 	public Text HighScoreLabel;
-<<<<<<< Updated upstream
-	private void Awake()
-	{
-		HighScoreLabel.text = " 1: " + PlayerPrefs.GetInt ("HS1") + "\n 2: " + PlayerPrefs.GetInt ("HS2")+ "\n 3: " + PlayerPrefs.GetInt ("HS3")+ "\n 4: " + PlayerPrefs.GetInt ("HS4")
-			+ "\n 5: " + PlayerPrefs.GetInt ("HS5")+ "\n 6: " + PlayerPrefs.GetInt ("HS6")+ "\n 7: " + PlayerPrefs.GetInt ("HS7")+ "\n 8: " + PlayerPrefs.GetInt ("HS8")
-			+ "\n 9: " + PlayerPrefs.GetInt ("HS9")+ "\n10: " + PlayerPrefs.GetInt ("HS10");
-=======
+
 	private void Awake(){
 		MainMenu.HighScore[0] = PlayerPrefs.GetInt("HS1");
 		MainMenu.HighScore[1] = PlayerPrefs.GetInt("HS2");
@@ -36,6 +30,6 @@ public class HighScore : MonoBehaviour
 		HighScoreLabel.text = "  1: " + MainMenu.HighScore[9]+"\n 2: " + MainMenu.HighScore[8]+"\n 3: " + MainMenu.HighScore[7]+
 			 "\n 4: " + MainMenu.HighScore[6]+"\n 5: " + MainMenu.HighScore[5]+"\n 6: " + MainMenu.HighScore[4]+
 			"\n 7: " + MainMenu.HighScore[3]+"\n 8: " + MainMenu.HighScore[2]+"\n 9: " + MainMenu.HighScore[1]+"\n10: " + MainMenu.HighScore[0];
->>>>>>> Stashed changes
+
 	}
 }
